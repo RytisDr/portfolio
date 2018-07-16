@@ -33,28 +33,28 @@ html {
     margin: auto
 }
 
-#index {
+.index {
     background-color: #BEB6AE;
 }
 
 /*index text*/
 
 #indexContent {
-    margin-top: 11vh;
-    margin-bottom: 130px;
+    margin-top: 10vh;
+    margin-bottom: 140px;
 }
 
-#index h1 {
+.index h1, .contactPage p {
     font: 13pt 'Josefin Sans', sans-serif;
     text-align: center;
     margin: 25px 0 0;
 }
 
-#index h1:nth-child(3) {
+.index h1:nth-child(3) {
     margin-bottom: -15px;
 }
 
-#index h1:nth-child(5) {
+.index h1:nth-child(5) {
     margin-top: 15px;
 }
 
@@ -85,19 +85,23 @@ html {
 }
 
 /*mobile navigation*/
-#mobileNav {
+
+.mobileNav {
     cursor: pointer;
     position: fixed;
     display: grid;
     bottom: 0;
     grid-auto-columns: 1fr 1fr;
 }
-#leftTriangle {
+
+.worksTriangle {
 
     border-bottom: 50vw solid white;
     border-right: 50vw solid transparent;
 }
-#leftTriangle h2, #rightTriangle h2{
+
+.worksTriangle h2,
+.contactTriangle h2 {
     font: 700 16pt 'Josefin Sans', sans-serif;
     color: #BEB6AE;
     position: absolute;
@@ -106,14 +110,49 @@ html {
     transform: rotate(45deg);
     margin: auto;
 }
-#rightTriangle{
+
+.contactTriangle {
     grid-column: 2;
     border-bottom: 50vw solid #9AA9B0;
     border-left: 50vw solid transparent;
 }
-#rightTriangle h2{
+
+.contactTriangle h2 {
     position: absolute;
     left: inherit;
     right: 2%;
     transform: rotate(-45deg);
+}
+
+/*contact page */
+
+.inContactPage {
+    background-color: #9AA9B0;
+}
+
+.homeTriangle {
+    border-bottom: 50vw solid #BEB6AE;
+}
+
+.contactTriangle h2:nth-child(2) {
+    color: #9AA9B0;
+    right: 7%;
+}
+.contactPage{
+    margin: 25vh 0 150px;
+    padding: 0 40px;
+}
+.contactPage p{
+    line-height: 20px;
+}
+/*class to apply transition*/
+
+.transitionAll {
+    transition: all 0.5s;
+}
+
+/*dont display class*/
+
+.dontDisplay {
+    display: none;
 }

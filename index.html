@@ -4,26 +4,26 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1, user-scalable=0">
-    <title>Rytis Drazdauskas</title>
+    <title>Rytis</title>
     <meta name="description" content="Web design and development portfolio" />
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">
     <link rel="stylesheet" href="style.css" type="text/css">
 </head>
 
-<body id="index">
+<body class="index transitionAll">
     <section id="indexContent">
         <h1>My name is Rytis [ri:tɪs].</h1>
         <h1>I am a web designer and developer.</h1>
         <h1>This is me.</h1>
         <svg id="me" data-name="me" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 146.99 176.96">
-  <defs>
+          <defs>
     <clipPath id="clip-path" transform="translate(-215.81 -151.27)">
       <path id="leftEyeOutline" class="cls-1" d="M270.23,208.56s-16.75-10.25-27,2.75c0,0,9,8.75,27,0C270.23,211.31,273.41,210.13,270.23,208.56Z"/>
     </clipPath>
     <clipPath id="clip-path-2" transform="translate(-215.81 -151.27)">
       <path id="RightEye" class="cls-1" d="M334.21,212.5s-8.5-15.21-26.25-2.71c-1.71,1.13-.62,2.4.75,2.71C311.16,212.93,320.71,219.69,334.21,212.5Z"/>
     </clipPath>
-  </defs>
+          </defs>
   <title>ME</title>
   <path class="cls-1" d="M233,151.5c-8.5,16-8.86,68.07-8.86,68.07s-4.09-5.64-6.39,0c-1,2.53-1.54,12.72-1.42,13.76s4.81,20.52,6.92,24.17c3.69,6.39,6.25,4.5,7,3.25a3,3,0,0,0,.25-2.5s5,31.75,8,37S263.25,325,270,325.75s36,6,46.5-4.5,26.75-25.75,28.5-38S347.25,263,347.25,263s2.25,5.75,7-2.5,8-16.75,8-22.75.75-20-3.5-19.5a6.63,6.63,0,0,0-5.5,3.5s0-45.5-5.75-59" transform="translate(-215.81 -151.27)"/>
   <path class="cls-1" d="M280.25,201.75s3.5,20.75,2.5,25.75-2.14,13.25.18,15.25,9.07,3,12.82-1.25-2.25-15-1.25-39.75" transform="translate(-215.81 -151.27)"/>
@@ -51,9 +51,19 @@
         <h1>You can see/read about them under works.</h1>
         <h1>You can also contact me.</h1>
     </section>
-    <section id="mobileNav">
-        <div id="leftTriangle"><h2>WORKS</h2></div>
-        <div id="rightTriangle"><h2>CONTACT</h2></div>
+    <section class="mobileNav">
+        <div class="worksTriangle">
+            <h2>WORKS</h2>
+        </div>
+        <div class="contactTriangle transitionAll">
+            <h2 class="transitionAll">CONTACT</h2>
+            <h2 class="dontDisplay transitionAll">HOME</h2>
+        </div>
+    </section>
+    <section class="contactPage dontDisplay">
+        <p>I am a Lithuanian dude currently studying Multimedia Design in Copenhagen, I have previously studied English and Spanish linguistics, but web development is where I feel at home.</p>
+        <p>You can reach me for job offers or to tell your fortune at:</p>
+        <p>me@rtsdr.com</p>
     </section>
     <script src="script.js" type="text/javascript"></script>
 </body>
