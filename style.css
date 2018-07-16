@@ -40,7 +40,8 @@ html {
 /*index text*/
 
 #indexContent {
-    margin-top: 12vh;
+    margin-top: 11vh;
+    margin-bottom: 130px;
 }
 
 #index h1 {
@@ -52,7 +53,8 @@ html {
 #index h1:nth-child(3) {
     margin-bottom: -15px;
 }
-#index h1:nth-child(5){
+
+#index h1:nth-child(5) {
     margin-top: 15px;
 }
 
@@ -67,7 +69,7 @@ html {
 
 .leftEye,
 .rightEye {
-    animation: blink 6s infinite;
+    animation: blink 5s infinite;
     transform-origin: 0px 59px 0px;
 }
 
@@ -80,4 +82,38 @@ html {
     1% {
         transform: scale(1, 0.07);
     }
+}
+
+/*mobile navigation*/
+#mobileNav {
+    cursor: pointer;
+    position: fixed;
+    display: grid;
+    bottom: 0;
+    grid-auto-columns: 1fr 1fr;
+}
+#leftTriangle {
+
+    border-bottom: 50vw solid white;
+    border-right: 50vw solid transparent;
+}
+#leftTriangle h2, #rightTriangle h2{
+    font: 700 16pt 'Josefin Sans', sans-serif;
+    color: #BEB6AE;
+    position: absolute;
+    top: 60%;
+    left: 10px;
+    transform: rotate(45deg);
+    margin: auto;
+}
+#rightTriangle{
+    grid-column: 2;
+    border-bottom: 50vw solid #9AA9B0;
+    border-left: 50vw solid transparent;
+}
+#rightTriangle h2{
+    position: absolute;
+    left: inherit;
+    right: 10px;
+    transform: rotate(-45deg);
 }
