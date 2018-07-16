@@ -1,1 +1,83 @@
-"use strict"
+/*SVG STUFF*/
+
+.cls-1,
+.cls-2,
+.cls-4 {
+    fill: none;
+    stroke: #231f20;
+}
+
+.cls-1,
+.cls-4 {
+    stroke-miterlimit: 10;
+}
+
+.cls-2 {
+    stroke-linejoin: round;
+}
+
+.cls-3 {
+    clip-path: url(#clip-path);
+}
+
+.cls-4 {
+    stroke-width: 0.75px;
+}
+
+.cls-5 {
+    clip-path: url(#clip-path-2);
+}
+
+body,
+html {
+    margin: auto
+}
+
+#index {
+    background-color: #BEB6AE;
+}
+
+/*index text*/
+
+#indexContent {
+    margin-top: 12vh;
+}
+
+#index h1 {
+    font: 13pt 'Josefin Sans', sans-serif;
+    text-align: center;
+    margin: 25px 0 0;
+}
+
+#index h1:nth-child(3) {
+    margin-bottom: -15px;
+}
+#index h1:nth-child(5){
+    margin-top: 15px;
+}
+
+/*SVG styling, animations*/
+
+#me {
+    width: 45vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.leftEye,
+.rightEye {
+    animation: blink 6s infinite;
+    transform-origin: 0px 59px 0px;
+}
+
+@keyframes blink {
+    0.1%,
+    2% {
+        transform: scale(1, 1);
+    }
+    0.6%,
+    1% {
+        transform: scale(1, 0.07);
+    }
+}
