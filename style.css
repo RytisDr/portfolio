@@ -40,7 +40,7 @@ html {
 /*index text*/
 
 .indexContent {
-    margin-top: 8vh;
+    margin-top: 7vh;
     margin-bottom: 140px;
 }
 
@@ -62,9 +62,9 @@ html {
 
 #me {
     width: 45vw;
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    display: block;
+    margin: auto;
+    animation: headMove 2s infinite alternate;
 }
 
 .leftEye,
@@ -83,7 +83,11 @@ html {
         transform: scale(1, 0.07);
     }
 }
-
+@keyframes headMove{
+    to{
+        transform: translateY(5px);
+    }
+}
 /*mobile navigation*/
 
 .mobileNav {
