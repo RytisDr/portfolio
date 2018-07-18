@@ -39,8 +39,8 @@ html {
 
 /*index text*/
 
-#indexContent {
-    margin-top: 10vh;
+.indexContent {
+    margin-top: 8vh;
     margin-bottom: 140px;
 }
 
@@ -95,7 +95,6 @@ html {
 }
 
 .worksTriangle {
-
     border-bottom: 50vw solid white;
     border-right: 50vw solid transparent;
 }
@@ -110,10 +109,12 @@ html {
     transform: rotate(45deg);
     margin: auto;
 }
-
+.worksTriangle h2.fontColorSwitch{
+    color: #0F4443;
+}
 .contactTriangle {
     grid-column: 2;
-    border-bottom: 50vw solid #9AA9B0;
+    border-bottom: 50vw solid #0F4443;
     border-left: 50vw solid transparent;
 }
 
@@ -127,7 +128,7 @@ html {
 /*contact page */
 
 .inContactPage {
-    background-color: #9AA9B0;
+    background-color: #0F4443;
 }
 
 .homeTriangle {
@@ -135,7 +136,7 @@ html {
 }
 
 .contactTriangle h2:nth-child(2) {
-    color: #9AA9B0;
+    color: #0F4443;
     right: 7%;
 }
 .contactPage{
@@ -144,6 +145,7 @@ html {
 }
 .contactPage p{
     line-height: 20px;
+    color: white;
 }
 /*class to apply transition*/
 
