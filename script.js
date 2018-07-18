@@ -20,4 +20,7 @@ if (window.location.pathname.includes("index")) {
         document.querySelector(".worksTriangle h2").classList.toggle("fontColorSwitch");
     }
 }
+/*WORKS SCRIPT*/
+if (window.location.pathname.includes("works")){
 
+}

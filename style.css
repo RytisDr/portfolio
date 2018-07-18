@@ -157,6 +157,24 @@ html {
 }
 
 /*works page*/
+.singleWork{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, auto));
+    grid-template-rows: auto;
+}
+.worksImg{
+    border: solid 2px black;
+    margin: 30px auto;
+    width: 250px;
+    height: 150px;
+   grid-area: 1/1/1/1;
+
+}
+.worksTitle{
+    margin: 190px 150px auto 55px;
+    grid-area: 1/1/1/1;
+}
+
 .homeTriangle h2{
     color: white;
     right: 3%;
