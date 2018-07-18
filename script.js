@@ -3,8 +3,12 @@
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
     let navContact = document.querySelector(".contactTriangle");
-
-    navContact.addEventListener('click', GoToContact)
+    let navWorks = document.querySelector(".worksTriangle");
+    navWorks.addEventListener('click', function(){
+        /*DONT FORGET TO REMOVE .HTML WHEN UPLOADING*/
+        window.location='works.html'
+    })
+    navContact.addEventListener('click', GoToContact);
 
     function GoToContact() {
         document.querySelector(".index").classList.toggle("inContactPage");
@@ -16,3 +20,4 @@ if (window.location.pathname.includes("index")) {
         document.querySelector(".worksTriangle h2").classList.toggle("fontColorSwitch");
     }
 }
+

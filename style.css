@@ -36,6 +36,11 @@ html {
 .index {
     background-color: #BEB6AE;
 }
+/*class to apply transition*/
+
+.transitionAll {
+    transition: all 0.5s;
+}
 
 /*index text*/
 
@@ -104,7 +109,7 @@ html {
 }
 
 .worksTriangle h2,
-.contactTriangle h2 {
+.contactTriangle h2, .homeTriangle h2, .filterTriangle h2 {
     font: 700 16pt 'Josefin Sans', sans-serif;
     color: #BEB6AE;
     position: absolute;
@@ -116,14 +121,13 @@ html {
 .worksTriangle h2.fontColorSwitch{
     color: #0F4443;
 }
-.contactTriangle {
+.contactTriangle, .homeTriangle {
     grid-column: 2;
     border-bottom: 50vw solid #0F4443;
     border-left: 50vw solid transparent;
 }
 
-.contactTriangle h2 {
-    position: absolute;
+.contactTriangle h2, .homeTriangle h2 {
     left: inherit;
     right: 2%;
     transform: rotate(-45deg);
@@ -151,12 +155,21 @@ html {
     line-height: 20px;
     color: white;
 }
-/*class to apply transition*/
 
-.transitionAll {
-    transition: all 0.5s;
+/*works page*/
+.homeTriangle h2{
+    color: white;
+    right: 3%;
 }
 
+.filterTriangle{
+    border-bottom: 50vw solid #7A6048;
+    border-right: 50vw solid transparent;
+}
+
+.filterTriangle h2{
+    color: white;
+}
 /*dont display class*/
 
 .dontDisplay {
