@@ -58,6 +58,7 @@ function showSingleWork(aWork) {
         clone.querySelector(".workTitle").textContent = aWork.title.rendered;
 
         clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium;
+        clone.querySelector(".worksImg").alt = aWork.acf.image.alt;
 
        /* if (aWork.type.includes("_")) {
             category.textContent = category.textContent.replace("_", " ")
