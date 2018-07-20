@@ -4,9 +4,9 @@
 if (window.location.pathname.includes("index")) {
     let navContact = document.querySelector(".contactTriangle");
     let navWorks = document.querySelector(".worksTriangle");
-    navWorks.addEventListener('click', function(){
+    navWorks.addEventListener('click', function () {
         /*DONT FORGET TO REMOVE .HTML WHEN UPLOADING*/
-        window.location='works.html'
+        window.location = 'works.html'
     })
     navContact.addEventListener('click', GoToContact);
 
@@ -20,7 +20,55 @@ if (window.location.pathname.includes("index")) {
         document.querySelector(".worksTriangle h2").classList.toggle("fontColorSwitch");
     }
 }
-/*WORKS SCRIPT*/
-if (window.location.pathname.includes("works")){
 
+/*WORKS SCRIPT*/
+
+let urlParams = new URLSearchParams(window.location.search);
+let id = urlParams.get("id");
+
+
+if (window.location.pathname.includes("works")) {
+    let worksSection = document.querySelector(".worksContent");
+    let page = 1;
+    let template = document.querySelector("#worksTemp").content;
+    let catid = urlParams.get("category");
+
+    document.querySelector(".homeTriangle").addEventListener('click', function () {
+        window.location = "index.html";
+    })
+function fetchWorks() {
+        let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=3&page=" + page
+        if (catid) {
+            endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=3&page=" + page + "&categories=" + catid
+        }
+        fetch(endpoint)
+            .then(e => {
+                let worksPages = e.headers.get("X-WP-TotalPages")
+                return e.json()
+            })
+            .then(showWorks)
+    }
+
+ function showWorks(data) {
+        data.forEach(showSingleWork)
+    }
+function showSingleWork(aWork) {
+
+        let clone = template.cloneNode(true);
+        clone.querySelector(".workTitle").textContent = aWork.title.rendered;
+
+        clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium;
+
+       /* if (aWork.type.includes("_")) {
+            category.textContent = category.textContent.replace("_", " ")
+        }*/
+        /*clone.querySelector(".singleEvent").addEventListener('click', showSubpage)
+
+        function showSubpage() {
+            window.location.href = "project.html?id=" + aWork.id;
+        }*/
+        worksSection.appendChild(clone);
+
+    }
+fetchWorks();
 }
