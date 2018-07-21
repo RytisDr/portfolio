@@ -28,6 +28,7 @@ let id = urlParams.get("id");
 
 
 if (window.location.pathname.includes("works")) {
+    let navFilter = document.querySelector(".filterTriangle");
     let worksSection = document.querySelector(".worksContent");
     let page = 1;
     let template = document.querySelector("#worksTemp").content;
@@ -36,7 +37,8 @@ if (window.location.pathname.includes("works")) {
     document.querySelector(".homeTriangle").addEventListener('click', function () {
         window.location = "index.html";
     })
-function fetchWorks() {
+
+    function fetchWorks() {
         let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=3&page=" + page
         if (catid) {
             endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=3&page=" + page + "&categories=" + catid
@@ -49,10 +51,11 @@ function fetchWorks() {
             .then(showWorks)
     }
 
- function showWorks(data) {
+    function showWorks(data) {
         data.forEach(showSingleWork)
     }
-function showSingleWork(aWork) {
+
+    function showSingleWork(aWork) {
 
         let clone = template.cloneNode(true);
         clone.querySelector(".workTitle").textContent = aWork.title.rendered;
@@ -60,9 +63,9 @@ function showSingleWork(aWork) {
         clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium;
         clone.querySelector(".worksImg").alt = aWork.acf.image.alt;
 
-       /* if (aWork.type.includes("_")) {
-            category.textContent = category.textContent.replace("_", " ")
-        }*/
+        /* if (aWork.type.includes("_")) {
+             category.textContent = category.textContent.replace("_", " ")
+         }*/
         /*clone.querySelector(".singleEvent").addEventListener('click', showSubpage)
 
         function showSubpage() {
@@ -71,5 +74,16 @@ function showSingleWork(aWork) {
         worksSection.appendChild(clone);
 
     }
-fetchWorks();
+    fetchWorks();
+
+    navFilter.addEventListener('click', function () {
+        let navFilterH2 = document.querySelector(".filterTriangle h2");
+        /*document.querySelector(".homeTriangle").classList.toggle("dontDisplay");*/
+        navFilter.classList.toggle("filterMenu");
+       /* navFilterH2.classList.toggle("dontDisplay");*/
+
+        /*navFilter.addEventListener('transitionend', function(){
+            document.querySelector(".filterTriangle h2").classList.toggle("dontDisplay");
+        });*/
+    })
 }
