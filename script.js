@@ -78,6 +78,7 @@ if (window.location.pathname.includes("works")) {
 
     navFilter.addEventListener('click', function () {
         let navFilterH2 = document.querySelector(".filterTriangle h2");
+        navFilterH2.classList.toggle("active");
         /*document.querySelector(".homeTriangle").classList.toggle("dontDisplay");*/
         navFilter.classList.toggle("filterMenu");
        /* navFilterH2.classList.toggle("dontDisplay");*/

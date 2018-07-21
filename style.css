@@ -108,23 +108,16 @@ html {
 .filterTriangle, .contactTriangle,
 .homeTriangle{
     cursor: pointer;
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 100px solid white;
+    border-left: 105px solid transparent;
+    border-right: 105px solid transparent;
+    border-top: 105px solid white;
     transform-origin: 50% 100%;
     transform: rotate(45deg);
     position: fixed;
     bottom: 0;
-    left: -100px;
+    left: -105px;
+    z-index: 4;
 }
-
-/*@keyframes Spin{
-    100%{
-        transform: rotate(360deg);
-    }
-}*/
 
 .worksTriangle h2,
 .contactTriangle h2,
@@ -136,7 +129,6 @@ html {
     top: -80px;
     left: -40px;
     margin: auto;
-    z-index: 3;
 }
 
 .worksTriangle h2.fontColorSwitch {
@@ -145,28 +137,16 @@ html {
 
 .contactTriangle,
 .homeTriangle {
-    cursor: pointer;
-    /*grid-column: 2;
-    border-bottom: 50vw solid #0F4443;
-    border-left: 50vw solid transparent;*/
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-top: 100px solid #0F4443;
-    transform-origin: 50% 100%;
+    border-top: 105px solid #0F4443;
     transform: rotate(-45deg);
-    position: fixed;
-    bottom: 0;
     left: inherit;
-    right: -100px;
+    right: -105px;
 }
 
 .contactTriangle h2,
 .homeTriangle h2 {
     left: inherit;
-    right: 2%;
-    transform: rotate(-45deg);
+    right: -50px;
 }
 
 /*contact page */
@@ -176,14 +156,12 @@ html {
 }
 
 .homeTriangle {
-    border-bottom: 50vw solid #BEB6AE;
-    border-right: 0vw;
-    border-top: 0vw;
+    border-top: 105px solid #BEB6AE;
 }
 
-.contactTriangle h2:nth-child(2) {
+.contactTriangle h2:nth-child(2), .homeTriangle h2 {
     color: #0F4443;
-    right: 7%;
+    right: -35px;
 }
 
 .contactPage {
@@ -207,13 +185,14 @@ html {
     display: grid;
     margin: auto;
 }
-
+.singleWork:last-child{
+    margin-bottom: 120px;
+}
 .worksImg {
     border: solid 2px black;
-    margin: 30px auto 0;
+    margin: 25px auto 0;
     width: 270px;
     grid-row: 1;
-
 }
 
 .workTitle {
@@ -224,28 +203,29 @@ html {
 
 .homeTriangle h2 {
     color: white;
-    right: 3%;
 }
 
 .filterTriangle {
-    border-bottom: 50vw solid #7A6048;
-    border-right: 50vw solid transparent;
+    border-left: 105px solid transparent;
+    border-right: 105px solid transparent;
+    border-top: 105px solid  #7A6048;
     width: 0;
     position: absolute;
-    z-index: 7;
+    z-index: 3;
 }
 
 .filterMenu {
-    border-bottom: 62vw solid #7A6048;
-    border-right: 100vw solid #7A6048;
+    border: solid #7A6048;
+    border-width: 230px 70vw 0px 95vw;
     transform: rotate(-45deg);
-
+    z-index: 3;
 }
 
 .filterTriangle h2 {
     color: white;
-    top: 30vw;
-    left: 20px;
+}
+.filterTriangle h2.active{
+    top: -200px;
 }
 
 /*dont display class*/
