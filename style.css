@@ -245,6 +245,21 @@ html {
 .filterTriangle h2.active{
     top: -200px;
 }
+
+#filterBack{
+    position: relative;
+}
+#filterBack div{
+    position: absolute;
+    z-index: 5;
+    transform: rotate(-45deg);
+    bottom: 60px;
+    left: 30px;
+    width: 70px;
+    height: 3px;
+    background-color: black;
+}
+
 .invisible{
     opacity: 0;
 }
