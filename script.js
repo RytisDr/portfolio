@@ -76,16 +76,36 @@ if (window.location.pathname.includes("works")) {
     }
     fetchWorks();
 
-    navFilter.addEventListener('click', function () {
-        let navFilterH2 = document.querySelector(".filterTriangle h2");
-        navFilterH2.classList.toggle("active");
-        document.querySelector(".filterTriangle h2 span").classList.toggle("fullOpacity");
-        /*document.querySelector(".homeTriangle").classList.toggle("dontDisplay");*/
-        navFilter.classList.toggle("filterMenu");
-       /* navFilterH2.classList.toggle("dontDisplay");*/
+    /*BUIL MENU*/
 
-        /*navFilter.addEventListener('transitionend', function(){
-            document.querySelector(".filterTriangle h2").classList.toggle("dontDisplay");
-        });*/
-    })
+    fetch("http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/categories?_embed&parent=54")
+        .then(e => e.json())
+        .then(buildMenu)
+
+    function buildMenu(data) {
+
+        data.forEach(item => {
+            let header = document.createElement("h2");
+            header.textContent = item.name;
+            navFilter.appendChild(header);
+            header.classList.add("dontDisplay");
+            header.addEventListener('click', function () {
+                window.location.href = "works.html?category=" + item.id;
+            })
+
+            navFilter.addEventListener('click', function openMenu() {
+                header.classList.toggle("dontDisplay");
+                document.querySelector("#filterAll").classList.toggle("dontDisplay");
+                document.querySelector("#filterAll").addEventListener('click',function() {
+                    window.location.href = "works.html";
+                })
+                let navFilterH2 = document.querySelector(".filterTriangle h2");
+                navFilterH2.classList.toggle("active");
+                document.querySelector(".filterTriangle h2 span").classList.toggle("fullOpacity");
+                navFilter.classList.toggle("filterMenu");
+                navFilter.removeEventListener('click', openMenu)
+            })
+        })
+    }
+
 }
