@@ -227,7 +227,12 @@ html {
 .filterTriangle h2.active{
     top: -200px;
 }
-
+.invisible{
+    opacity: 0;
+}
+.fullOpacity{
+    opacity: 1;
+}
 /*dont display class*/
 
 .dontDisplay {
