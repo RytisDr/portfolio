@@ -186,6 +186,7 @@ html {
 .singleWork {
     display: grid;
     margin: auto;
+    cursor: pointer;
 }
 
 .singleWork:last-child {
@@ -193,6 +194,7 @@ html {
 }
 
 .worksImg {
+
     border: solid 2px black;
     margin: 25px auto 0;
     width: 270px;

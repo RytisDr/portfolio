@@ -66,11 +66,11 @@ if (window.location.pathname.includes("works")) {
         /* if (aWork.type.includes("_")) {
              category.textContent = category.textContent.replace("_", " ")
          }*/
-        /*clone.querySelector(".singleEvent").addEventListener('click', showSubpage)
+        clone.querySelector(".singleWork").addEventListener('click', showSubpage)
 
         function showSubpage() {
             window.location.href = "project.html?id=" + aWork.id;
-        }*/
+        }
         worksSection.appendChild(clone);
 
     }
@@ -86,14 +86,24 @@ if (window.location.pathname.includes("works")) {
 
         data.forEach(item => {
             let header = document.createElement("h2");
+            let option = document.createElement("h1");
             header.textContent = item.name;
+
             navFilter.appendChild(header);
+            option.classList.add("dontDisplay");
             header.classList.add("dontDisplay");
             header.addEventListener('click', function () {
                 window.location.href = "works.html?category=" + item.id;
             })
-
+            /*SHOW CURRENT FILTER OPTION*/
+            let filterOption = document.querySelector("#currentOpt");
+            let currentOption = new URLSearchParams(window.location.search)
+            let curCat = currentOption.get("category");
+            if (curCat == item.id) {
+                filterOption.textContent = item.name + " Projects";
+            }
             navFilter.addEventListener('click', openMenu)
+
             function openMenu() {
                 let navFilterH2 = document.querySelector(".filterTriangle h2");
                 let backArrow = document.querySelector("#filterBack");
@@ -106,8 +116,11 @@ if (window.location.pathname.includes("works")) {
                 document.querySelector("#filterAll").addEventListener('click', function () {
                     window.location.href = "works.html";
                 })
+
             }
+
         })
+
     }
 
 }
