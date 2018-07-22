@@ -59,9 +59,9 @@ if (window.location.pathname.includes("works")) {
 
         let clone = template.cloneNode(true);
         clone.querySelector(".workTitle").textContent = aWork.title.rendered;
-
         clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium;
         clone.querySelector(".worksImg").alt = aWork.acf.image.alt;
+
         clone.querySelector(".singleWork").addEventListener('click', showSubpage)
 
         function showSubpage() {
@@ -119,5 +119,11 @@ if (window.location.pathname.includes("works")) {
         })
 
     }
+
+}
+
+/*SINGLE PROJECT SUBPAGE SCRIPT*/
+
+if (window.location.pathname.includes("project")) {
 
 }
