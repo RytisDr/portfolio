@@ -93,18 +93,20 @@ if (window.location.pathname.includes("works")) {
                 window.location.href = "works.html?category=" + item.id;
             })
 
-            navFilter.addEventListener('click', function openMenu() {
+            navFilter.addEventListener('click', openMenu)
+            function openMenu() {
+                let navFilterH2 = document.querySelector(".filterTriangle h2");
+                let backArrow = document.querySelector("#filterBack");
                 header.classList.toggle("dontDisplay");
                 document.querySelector("#filterAll").classList.toggle("dontDisplay");
-                document.querySelector("#filterAll").addEventListener('click',function() {
-                    window.location.href = "works.html";
-                })
-                let navFilterH2 = document.querySelector(".filterTriangle h2");
                 navFilterH2.classList.toggle("active");
                 document.querySelector(".filterTriangle h2 span").classList.toggle("fullOpacity");
                 navFilter.classList.toggle("filterMenu");
-                navFilter.removeEventListener('click', openMenu)
-            })
+                backArrow.classList.toggle("dontDisplay");
+                document.querySelector("#filterAll").addEventListener('click', function () {
+                    window.location.href = "works.html";
+                })
+            }
         })
     }
 
