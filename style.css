@@ -51,7 +51,7 @@ html {
 }
 
 .index h1,
-.contactPage p {
+.contactPage p, #currentOpt {
     font: 13pt 'Josefin Sans', sans-serif;
     text-align: center;
     margin: 25px 0 0;
@@ -177,6 +177,12 @@ html {
 }
 
 /*works page*/
+
+#currentOpt {
+    font-size: 1.5em;
+    font-weight: 700;
+    margin: 10px;
+}
 
 .worksContent {
     display: grid;
