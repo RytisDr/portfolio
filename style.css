@@ -28,6 +28,33 @@
     clip-path: url(#clip-path-2);
 }
 
+.cog1 {
+    fill: #7a6048;
+}
+
+.cog2 {
+    fill: #877e60;
+}
+#loaderSVG{
+    position: relative;
+    top: 20vw;
+}
+#loaderSVG svg:first-child{
+    animation: rotation 5s linear infinite reverse;
+}
+#loaderSVG svg{
+    width: 35vw;
+    display: block;
+    margin: -7px auto;
+
+    animation: rotation 5s linear infinite;
+}
+@keyframes rotation{
+    to{
+        transform: rotate(-360deg)
+    }
+}
+
 body,
 html {
     margin: auto
@@ -51,7 +78,8 @@ html {
 }
 
 .index h1,
-.contactPage p, #currentOpt {
+.contactPage p,
+#currentOpt {
     font: 13pt 'Josefin Sans', sans-serif;
     text-align: center;
     margin: 25px 0 0;
@@ -310,20 +338,25 @@ html {
 }
 
 /*SINGLE PROJECT PAGE*/
+
 /*NAV ADJUSTMENTS*/
-.inSubPage{
-   border-left: 105px solid transparent;
+
+.inSubPage {
+    border-left: 105px solid transparent;
     border-right: 105px solid transparent;
     border-top: 105px solid #877E60;
 }
-.inSubPage h2{
+
+.inSubPage h2 {
     color: white;
     top: -90px;
     width: 94px;
 }
-#subpageImg{
+
+#subpageImg {
     width: 100vw;
 }
+
 /*INVISIBLE AND FULL OPACITY CLASSES*/
 
 .invisible {

@@ -28,6 +28,7 @@ let id = urlParams.get("id");
 
 
 if (window.location.pathname.includes("works")) {
+    document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     let navFilter = document.querySelector(".filterTriangle");
     let worksSection = document.querySelector(".worksContent");
     let page = 1;
@@ -68,7 +69,7 @@ if (window.location.pathname.includes("works")) {
             window.location.href = "project.html?id=" + aWork.id;
         }
         worksSection.appendChild(clone);
-
+        document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     }
     fetchWorks();
 
@@ -79,7 +80,8 @@ if (window.location.pathname.includes("works")) {
         .then(buildMenu)
 
     function buildMenu(data) {
-
+        let filterOption = document.querySelector("#currentOpt");
+        filterOption.classList.toggle("invisible")
         data.forEach(item => {
             let header = document.createElement("h2");
             let option = document.createElement("h1");
@@ -92,7 +94,7 @@ if (window.location.pathname.includes("works")) {
                 window.location.href = "works.html?category=" + item.id;
             })
             /*SHOW CURRENT FILTER OPTION*/
-            let filterOption = document.querySelector("#currentOpt");
+
             let currentOption = new URLSearchParams(window.location.search)
             let curCat = currentOption.get("category");
             if (curCat == item.id) {
@@ -132,6 +134,7 @@ if (window.location.pathname.includes("project")) {
     document.querySelector(".worksTriangle").addEventListener('click', function (){
         window.history.back();
     })
+    document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     let subpage = document.querySelector("#singleProject")
     let subTemplate = document.querySelector("#subTemp").content
 
@@ -148,6 +151,7 @@ if (window.location.pathname.includes("project")) {
         clone.querySelector("#subpageImg").alt = aProject.acf.image.alt
         clone.querySelector("#subpageTitle").textContent = aProject.title.rendered
         subpage.appendChild(clone)
+        document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     }
 
 }
