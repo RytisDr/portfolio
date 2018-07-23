@@ -126,4 +126,28 @@ if (window.location.pathname.includes("works")) {
 
 if (window.location.pathname.includes("project")) {
 
+    document.querySelector(".homeTriangle").addEventListener('click', function () {
+        window.location = "index.html";
+    })
+    document.querySelector(".worksTriangle").addEventListener('click', function (){
+        window.history.back();
+    })
+    let subpage = document.querySelector("#singleProject")
+    let subTemplate = document.querySelector("#subTemp").content
+
+    let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works/" + id
+
+    fetch(endpoint)
+            .then(e => e.json())
+            .then(showSingleWork);
+
+    function showSingleWork(aProject){
+
+        let clone = subTemplate.cloneNode(true);
+        clone.querySelector("#subpageImg").src = aProject.acf.image.sizes.medium_large
+        clone.querySelector("#subpageImg").alt = aProject.acf.image.alt
+        clone.querySelector("#subpageTitle").textContent = aProject.title.rendered
+        subpage.appendChild(clone)
+    }
+
 }

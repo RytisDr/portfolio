@@ -309,6 +309,21 @@ html {
     transform: rotate(180deg)
 }
 
+/*SINGLE PROJECT PAGE*/
+/*NAV ADJUSTMENTS*/
+.inSubPage{
+   border-left: 105px solid transparent;
+    border-right: 105px solid transparent;
+    border-top: 105px solid #877E60;
+}
+.inSubPage h2{
+    color: white;
+    top: -90px;
+    width: 94px;
+}
+#subpageImg{
+    width: 100vw;
+}
 /*INVISIBLE AND FULL OPACITY CLASSES*/
 
 .invisible {
