@@ -131,7 +131,7 @@ if (window.location.pathname.includes("project")) {
     document.querySelector(".homeTriangle").addEventListener('click', function () {
         window.location = "index.html";
     })
-    document.querySelector(".worksTriangle").addEventListener('click', function (){
+    document.querySelector(".worksTriangle").addEventListener('click', function () {
         window.history.back();
     })
     document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
@@ -141,15 +141,26 @@ if (window.location.pathname.includes("project")) {
     let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works/" + id
 
     fetch(endpoint)
-            .then(e => e.json())
-            .then(showSingleWork);
+        .then(e => e.json())
+        .then(showSingleWork);
 
-    function showSingleWork(aProject){
+    function showSingleWork(aProject) {
 
         let clone = subTemplate.cloneNode(true);
         clone.querySelector("#subpageImg").src = aProject.acf.image.sizes.medium_large
         clone.querySelector("#subpageImg").alt = aProject.acf.image.alt
         clone.querySelector("#subpageTitle").textContent = aProject.title.rendered
+        clone.querySelector("#description").textContent = aProject.acf.full_description
+        clone.querySelector("#explanation").textContent = aProject.acf.info_how
+        if (aProject.acf.link) {
+            clone.querySelector("#visitLink").classList.toggle("dontDisplay")
+            clone.querySelector("#visitLink").href = aProject.acf.link
+        }
+        if (aProject.acf.file) {
+
+            clone.querySelector("#downloadLink").href = aProject.acf.file.url
+             clone.querySelector("#downloadLink").classList.toggle("dontDisplay")
+        }
         subpage.appendChild(clone)
         document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     }
