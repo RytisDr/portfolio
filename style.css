@@ -235,10 +235,11 @@ html {
     grid-row: 1;
 }
 
-.workTitle {
+.workTitle, #singleProject h1, #singleProject h2, #singleProject a{
     margin: 5px 0 0 0;
     grid-row: 2;
     font: 20px 'Josefin Sans', sans-serif;
+    color: black;
 }
 
 .homeTriangle h2 {
@@ -355,7 +356,13 @@ html {
 
 #subpageImg {
     width: 100vw;
+    cursor: pointer;
 }
+#singleProject p{
+    font-family: 'Work Sans', sans-serif;
+    font-size: 13pt;
+}
+
 
 /*INVISIBLE AND FULL OPACITY CLASSES*/
 

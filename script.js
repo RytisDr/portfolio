@@ -155,6 +155,9 @@ if (window.location.pathname.includes("project")) {
         if (aProject.acf.link) {
             clone.querySelector("#visitLink").classList.toggle("dontDisplay")
             clone.querySelector("#visitLink").href = aProject.acf.link
+            clone.querySelector("#subpageImg").addEventListener('click', function (){
+                window.open(aProject.acf.link, '_blank')
+            })
         }
         if (aProject.acf.file) {
 
