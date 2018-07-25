@@ -358,12 +358,26 @@ html {
     width: 100vw;
     cursor: pointer;
 }
+#singleProject h1{
+    margin-bottom: 40px;
+}
 #singleProject p{
     font-family: 'Work Sans', sans-serif;
     font-size: 13pt;
 }
-
-
+#singleProject a{
+    position: absolute;
+    right: 20px;
+    top: 10px;
+}
+#singleProject a:nth-child(3){
+    top: 50px;
+}
+#subpageText{
+    padding: 10px 20px;
+    margin-bottom: 100px;
+    position: relative;
+}
 /*INVISIBLE AND FULL OPACITY CLASSES*/
 
 .invisible {
