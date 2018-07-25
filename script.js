@@ -1,5 +1,6 @@
 "use strict"
-let mobile = window.matchMedia("(max-width: 666px)");
+let mobile = window.matchMedia("(max-width: 665px)");
+let breakpoint = window.matchMedia("(min-width: 666px)");
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
     let navContact = document.querySelector(".contactTriangle");
@@ -8,7 +9,8 @@ if (window.location.pathname.includes("index")) {
         /*DONT FORGET TO REMOVE .HTML WHEN UPLOADING*/
         window.location = 'works.html'
     })
-
+    let inMobileContactPage = false;
+    let inDesktopContactPage = false;
     navContact.addEventListener('click', GoToContact);
 
     function GoToContact() {
@@ -21,13 +23,24 @@ if (window.location.pathname.includes("index")) {
             document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             navContact.classList.toggle("homeTriangle");
+           inMobileContactPage = true;
         }else{
             document.querySelector(".contactTriangle").classList.toggle("inContact");
             document.querySelector(".contactTriangle h2").classList.toggle("fontColorSwitch");
              document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
+          inDesktopContactPage = true;
+        }
+
+        /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN IN CONTACT PAGE*/
+        window.addEventListener('resize', refresh)
+    function refresh(){
+        if(mobile.matches && inDesktopContactPage || breakpoint.matches && inMobileContactPage){
+            location.reload()
         }
     }
+    }
+
 }
 
 /*WORKS SCRIPT*/
