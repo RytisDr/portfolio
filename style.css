@@ -35,22 +35,26 @@
 .cog2 {
     fill: #877e60;
 }
-#loaderSVG{
+
+#loaderSVG {
     position: relative;
     top: 20vw;
 }
-#loaderSVG svg:first-child{
+
+#loaderSVG svg:first-child {
     animation: rotation 5s linear infinite reverse;
 }
-#loaderSVG svg{
+
+#loaderSVG svg {
     width: 35vw;
     display: block;
     margin: -7px auto;
 
     animation: rotation 5s linear infinite;
 }
-@keyframes rotation{
-    to{
+
+@keyframes rotation {
+    to {
         transform: rotate(-360deg)
     }
 }
@@ -100,6 +104,7 @@ html {
     display: block;
     margin: auto;
     animation: headMove 2s infinite alternate;
+    max-width: 300px;
 }
 
 .leftEye,
@@ -121,7 +126,7 @@ html {
 
 @keyframes headMove {
     to {
-        transform: translateY(5px);
+        transform: translateY(-10px);
     }
 }
 
@@ -235,7 +240,10 @@ html {
     grid-row: 1;
 }
 
-.workTitle, #singleProject h1, #singleProject h2, #singleProject a{
+.workTitle,
+#singleProject h1,
+#singleProject h2,
+#singleProject a {
     margin: 5px 0 0 0;
     grid-row: 2;
     font: 20px 'Josefin Sans', sans-serif;
@@ -358,26 +366,88 @@ html {
     width: 100vw;
     cursor: pointer;
 }
-#singleProject h1{
+
+#singleProject h1 {
     margin-bottom: 40px;
 }
-#singleProject p{
+
+#singleProject p {
     font-family: 'Work Sans', sans-serif;
     font-size: 13pt;
 }
-#singleProject a{
+
+#singleProject a {
     position: absolute;
     right: 20px;
     top: 10px;
 }
-#singleProject a:nth-child(3){
+
+#singleProject a:nth-child(3) {
     top: 50px;
 }
-#subpageText{
+
+#subpageText {
     padding: 10px 20px;
     margin-bottom: 100px;
     position: relative;
 }
+
+/*BREAKPOINT 1*/
+
+@media only screen and (min-width: 666px) {
+    .indexContent h1 {
+        font-size: 16pt;
+    }
+    .indexContent {
+        margin-top: 13vh;
+    }
+    #me{
+        width: 35vw;
+    }
+    .mobileNav {
+       position: absolute;
+        bottom: inherit;
+        margin-top: 13vh;
+        top: 0;
+        left: 0;
+        right: 0;
+
+    }
+    .contactTriangle,
+    .worksTriangle {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 0;
+        right: 0;
+        top: 215px;
+        width: 180px;
+        height: 110px;
+        border: none;
+        background-color: #0F4443;
+        transform: none;
+        border-radius: 125px;
+    }
+    .contactTriangle{
+        right: -500px;
+    }
+    .worksTriangle{
+        left: -500px;
+        background-color: white;
+    }
+    .contactTriangle h2, .worksTriangle h2{
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        line-height: 110px;
+        text-align: center;
+        font-size: 25pt;
+    }
+
+}
+
+
 /*INVISIBLE AND FULL OPACITY CLASSES*/
 
 .invisible {
