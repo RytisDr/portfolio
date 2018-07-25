@@ -1,5 +1,5 @@
 "use strict"
-
+let mobile = window.matchMedia("(max-width: 666px)");
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
     let navContact = document.querySelector(".contactTriangle");
@@ -8,16 +8,25 @@ if (window.location.pathname.includes("index")) {
         /*DONT FORGET TO REMOVE .HTML WHEN UPLOADING*/
         window.location = 'works.html'
     })
+
     navContact.addEventListener('click', GoToContact);
 
     function GoToContact() {
+
         document.querySelector(".index").classList.toggle("inContactPage");
         document.querySelector(".indexContent").classList.toggle("dontDisplay");
         document.querySelector(".contactPage").classList.toggle("dontDisplay");
-        document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
-        document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
-        navContact.classList.toggle("homeTriangle");
         document.querySelector(".worksTriangle h2").classList.toggle("fontColorSwitch");
+        if (mobile.matches) {
+            document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
+            document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
+            navContact.classList.toggle("homeTriangle");
+        }else{
+            document.querySelector(".contactTriangle").classList.toggle("inContact");
+            document.querySelector(".contactTriangle h2").classList.toggle("fontColorSwitch");
+             document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
+            document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
+        }
     }
 }
 
@@ -155,14 +164,14 @@ if (window.location.pathname.includes("project")) {
         if (aProject.acf.link) {
             clone.querySelector("#visitLink").classList.toggle("dontDisplay")
             clone.querySelector("#visitLink").href = aProject.acf.link
-            clone.querySelector("#subpageImg").addEventListener('click', function (){
+            clone.querySelector("#subpageImg").addEventListener('click', function () {
                 window.open(aProject.acf.link, '_blank')
             })
         }
         if (aProject.acf.file) {
 
             clone.querySelector("#downloadLink").href = aProject.acf.file.url
-             clone.querySelector("#downloadLink").classList.toggle("dontDisplay")
+            clone.querySelector("#downloadLink").classList.toggle("dontDisplay")
         }
         subpage.appendChild(clone)
         document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
