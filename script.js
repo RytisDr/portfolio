@@ -3,6 +3,16 @@ let mobile = window.matchMedia("(max-width: 665px)");
 let breakpoint = window.matchMedia("(min-width: 666px)");
 let inMobilePage = false;
 let inDesktopPage = false;
+
+ /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN RESIZING TO BREAKPOINT*/
+        window.addEventListener('resize', refresh)
+
+        function refresh() {
+            if (mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage) {
+                location.reload()
+            }
+
+
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
     let navContact = document.querySelector(".contactTriangle");
@@ -33,13 +43,7 @@ if (window.location.pathname.includes("index")) {
             inDesktopPage = true;
         }
 
-        /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN IN CONTACT PAGE*/
-        window.addEventListener('resize', refresh)
 
-        function refresh() {
-            if (mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage) {
-                location.reload()
-            }
         }
     }
 
@@ -52,7 +56,6 @@ let id = urlParams.get("id");
 
 
 if (window.location.pathname.includes("works")) {
-    console.log(inDesktopPage)
     document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     let navFilter = document.querySelector(".filterTriangle");
     let worksSection = document.querySelector(".worksContent");
@@ -109,6 +112,9 @@ if (window.location.pathname.includes("works")) {
         let filterOption = document.querySelector("#currentOpt");
         filterOption.classList.toggle("invisible")
         data.forEach(item => {
+            if(mobile.matches){
+                inMobilePage = true;
+            }
             let header = document.createElement("h2");
             let option = document.createElement("h1");
             header.textContent = item.name;
