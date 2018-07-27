@@ -156,7 +156,7 @@ html {
 .worksTriangle h2,
 .contactTriangle h2,
 .homeTriangle h2,
-.filterTriangle h2{
+.filterTriangle h2 {
     font: 700 16pt 'Josefin Sans', sans-serif;
     color: #BEB6AE;
     position: absolute;
@@ -165,7 +165,8 @@ html {
     margin: auto;
 }
 
-.worksTriangle h2.fontColorSwitch, .contactTriangle h2.fontColorSwitch {
+.worksTriangle h2.fontColorSwitch,
+.contactTriangle h2.fontColorSwitch {
     color: #0F4443;
 }
 
@@ -401,11 +402,11 @@ html {
     .indexContent {
         margin-top: 13vh;
     }
-    #me{
+    #me {
         width: 35vw;
     }
     .mobileNav {
-       position: absolute;
+        position: absolute;
         bottom: inherit;
         top: 0;
         left: 0;
@@ -413,57 +414,68 @@ html {
 
     }
     .contactTriangle,
-    .worksTriangle, .homeTriangle {
+    .worksTriangle,
+    .homeTriangle {
         position: absolute;
         margin-left: auto;
         margin-right: auto;
         left: 0;
         right: 0;
         top: 4vh;
-        width: 180px;
-        height: 110px;
+        width: 170px;
+        height: 90px;
         border: none;
         background-color: #0F4443;
         transform: none;
         border-radius: 125px;
     }
-    .contactTriangle, .homeTriangle{
+    .contactTriangle,
+    .homeTriangle {
         right: -500px;
     }
-    .worksTriangle{
+    .worksTriangle {
         left: -500px;
         background-color: white;
     }
-    .contactTriangle h2, .worksTriangle h2, .homeTriangle h2{
+    .contactTriangle h2,
+    .worksTriangle h2,
+    .homeTriangle h2 {
         left: 0;
         right: 0;
         top: 0;
         bottom: 0;
-        line-height: 110px;
+        line-height: 90px;
         text-align: center;
         font-size: 25pt;
     }
-    .contactPage p{
+    .contactPage p {
         width: 450px;
         margin: 20px auto;
     }
-    .inContact, .homeTriangle{
+    .inContact,
+    .homeTriangle {
         background-color: #BEB6AE;
     }
-    .contactTriangle h2:nth-child(2){
-        right: 0;
-    }
-    .filterTriangle{
+    .filterTriangle {
         display: none;
     }
-    #desktopFilterSec{
-
+    #desktopFilterSec {
+        margin: auto 20vw auto auto;
+        height: 150px;
     }
-    .desktopFilter{
-       display: inline-block;
-        font: 400 16pt 'Josefin Sans', sans-serif;
+    .desktopFilter {
+        cursor: pointer;
+        display: inline-block;
+        font: 400 20pt 'Josefin Sans', sans-serif;
+        text-align: center;
+        margin: 7vh 10px;
+        width: 150px;
+        height: 50px;
+        line-height: 50px;
     }
-
+    .choice{
+        border: solid 2px black
+    }
 
 }
 

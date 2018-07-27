@@ -24,22 +24,23 @@ if (window.location.pathname.includes("index")) {
             document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             navContact.classList.toggle("homeTriangle");
-           inMobilePage = true;
-        }else{
+            inMobilePage = true;
+        } else {
             document.querySelector(".contactTriangle").classList.toggle("inContact");
             document.querySelector(".contactTriangle h2").classList.toggle("fontColorSwitch");
-             document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
+            document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
-          inDesktopPage = true;
+            inDesktopPage = true;
         }
 
         /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN IN CONTACT PAGE*/
         window.addEventListener('resize', refresh)
-    function refresh(){
-        if(mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage){
-            location.reload()
+
+        function refresh() {
+            if (mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage) {
+                location.reload()
+            }
         }
-    }
     }
 
 }
@@ -93,6 +94,7 @@ if (window.location.pathname.includes("works")) {
             window.location.href = "project.html?id=" + aWork.id;
         }
         worksSection.appendChild(clone);
+        worksSection.classList.toggle("invisible");
         document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     }
     fetchWorks();
@@ -111,15 +113,16 @@ if (window.location.pathname.includes("works")) {
             let option = document.createElement("h1");
             header.textContent = item.name;
             navFilter.appendChild(header);
-
             option.classList.toggle("dontDisplay");
             header.classList.toggle("dontDisplay");
             /*Desktop Filter*/
-            if(breakpoint.matches){
+            if (breakpoint.matches) {
                 inDesktopPage = true;
+                filterOption.classList.toggle("dontDisplay")
                 header.classList.toggle("dontDisplay");
                 header.classList.add("desktopFilter");
                 document.querySelector("#desktopFilterSec").appendChild(header);
+                document.querySelector("#desktopFilterSec").classList.toggle("invisible")
             }
             header.addEventListener('click', function () {
                 window.location.href = "works.html?category=" + item.id;
