@@ -1,6 +1,8 @@
 "use strict"
 let mobile = window.matchMedia("(max-width: 665px)");
 let breakpoint = window.matchMedia("(min-width: 666px)");
+let inMobilePage = false;
+let inDesktopPage = false;
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
     let navContact = document.querySelector(".contactTriangle");
@@ -9,8 +11,7 @@ if (window.location.pathname.includes("index")) {
         /*DONT FORGET TO REMOVE .HTML WHEN UPLOADING*/
         window.location = 'works.html'
     })
-    let inMobileContactPage = false;
-    let inDesktopContactPage = false;
+
     navContact.addEventListener('click', GoToContact);
 
     function GoToContact() {
@@ -23,19 +24,19 @@ if (window.location.pathname.includes("index")) {
             document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             navContact.classList.toggle("homeTriangle");
-           inMobileContactPage = true;
+           inMobilePage = true;
         }else{
             document.querySelector(".contactTriangle").classList.toggle("inContact");
             document.querySelector(".contactTriangle h2").classList.toggle("fontColorSwitch");
              document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
-          inDesktopContactPage = true;
+          inDesktopPage = true;
         }
 
         /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN IN CONTACT PAGE*/
         window.addEventListener('resize', refresh)
     function refresh(){
-        if(mobile.matches && inDesktopContactPage || breakpoint.matches && inMobileContactPage){
+        if(mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage){
             location.reload()
         }
     }
@@ -50,6 +51,7 @@ let id = urlParams.get("id");
 
 
 if (window.location.pathname.includes("works")) {
+    console.log(inDesktopPage)
     document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     let navFilter = document.querySelector(".filterTriangle");
     let worksSection = document.querySelector(".worksContent");
@@ -108,10 +110,17 @@ if (window.location.pathname.includes("works")) {
             let header = document.createElement("h2");
             let option = document.createElement("h1");
             header.textContent = item.name;
-
             navFilter.appendChild(header);
-            option.classList.add("dontDisplay");
-            header.classList.add("dontDisplay");
+
+            option.classList.toggle("dontDisplay");
+            header.classList.toggle("dontDisplay");
+            /*Desktop Filter*/
+            if(breakpoint.matches){
+                inDesktopPage = true;
+                header.classList.toggle("dontDisplay");
+                header.classList.add("desktopFilter");
+                document.querySelector("#desktopFilterSec").appendChild(header);
+            }
             header.addEventListener('click', function () {
                 window.location.href = "works.html?category=" + item.id;
             })

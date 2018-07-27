@@ -156,7 +156,7 @@ html {
 .worksTriangle h2,
 .contactTriangle h2,
 .homeTriangle h2,
-.filterTriangle h2 {
+.filterTriangle h2{
     font: 700 16pt 'Josefin Sans', sans-serif;
     color: #BEB6AE;
     position: absolute;
@@ -413,7 +413,7 @@ html {
 
     }
     .contactTriangle,
-    .worksTriangle, .filterTriangle, .homeTriangle {
+    .worksTriangle, .homeTriangle {
         position: absolute;
         margin-left: auto;
         margin-right: auto;
@@ -434,7 +434,7 @@ html {
         left: -500px;
         background-color: white;
     }
-    .contactTriangle h2, .worksTriangle h2{
+    .contactTriangle h2, .worksTriangle h2, .homeTriangle h2{
         left: 0;
         right: 0;
         top: 0;
@@ -447,12 +447,23 @@ html {
         width: 450px;
         margin: 20px auto;
     }
-    .inContact{
+    .inContact, .homeTriangle{
         background-color: #BEB6AE;
     }
     .contactTriangle h2:nth-child(2){
         right: 0;
     }
+    .filterTriangle{
+        display: none;
+    }
+    #desktopFilterSec{
+
+    }
+    .desktopFilter{
+       display: inline-block;
+        font: 400 16pt 'Josefin Sans', sans-serif;
+    }
+
 
 }
 
