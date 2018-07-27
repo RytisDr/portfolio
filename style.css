@@ -413,7 +413,7 @@ html {
 
     }
     .contactTriangle,
-    .worksTriangle {
+    .worksTriangle, .filterTriangle, .homeTriangle {
         position: absolute;
         margin-left: auto;
         margin-right: auto;
@@ -427,7 +427,7 @@ html {
         transform: none;
         border-radius: 125px;
     }
-    .contactTriangle{
+    .contactTriangle, .homeTriangle{
         right: -500px;
     }
     .worksTriangle{
@@ -443,8 +443,9 @@ html {
         text-align: center;
         font-size: 25pt;
     }
-    .contactPage {
-        padding: 50px 20vw;
+    .contactPage p{
+        width: 450px;
+        margin: 20px auto;
     }
     .inContact{
         background-color: #BEB6AE;
