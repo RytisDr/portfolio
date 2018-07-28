@@ -207,7 +207,7 @@ html {
 }
 
 .contactPage p {
-    line-height: 23px;
+
     color: white;
 }
 
@@ -366,6 +366,7 @@ html {
 
 #subpageImg {
     width: 100vw;
+   /* max-width: 525px;*/
     cursor: pointer;
 }
 
@@ -485,7 +486,7 @@ html {
     .worksImg {
         margin: auto;
     }
-    #loaderSVG{
+    #loaderSVG {
         position: absolute;
         z-index: -5;
         top: 200px;
@@ -497,11 +498,57 @@ html {
         width: 200px;
         margin: -15px auto;
     }
-    .worksContent{
+    .worksContent {
         margin-top: 50px;
     }
+    .worksTriangle.inSubPage {
+        background-color: #877E60;
+    }
+    #singleProject {
+        margin: auto;
+        width: 657px;
+        margin-top: 150px;
+    }
+    #subpageImg {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 657px;
+    }
+    #singleProject h1{
+        font-size: 27pt;
+    }
+    #singleProject h2, #singleProject a{
+        font-size: 20pt;
+    }
+    #singleProject p{
+        font-size: 15pt;
+    }
+    .mobileNav{
+        /*position: fixed;*/
+    }
 }
-
+/*BREAKPOINT 2*/
+@media only screen and (min-width: 1200px){
+    .indexContent h1 {
+        font-size: 18pt;
+    }
+    .indexContent {
+        margin-top: 15vh;
+        margin-bottom: 50px;
+    }
+    #me {
+        max-width: 350px;
+    }
+    .contactPage p{
+        font-size: 20pt;
+        line-height: 30px;
+        margin: 30px auto;
+    }
+    .contactPage p:nth-child(1){
+        margin-top: 310px;
+    }
+}
 
 /*INVISIBLE AND FULL OPACITY CLASSES*/
 
