@@ -423,9 +423,9 @@ html {
         margin-right: auto;
         left: 0;
         right: 0;
-        top: 4vh;
-        width: 170px;
-        height: 90px;
+        top: 50px;
+        width: 160px;
+        height: 80px;
         border: none;
         background-color: #0F4443;
         transform: none;
@@ -446,10 +446,10 @@ html {
         right: 0;
         top: 0;
         bottom: 0;
-        line-height: 90px;
-        width: 170px;
+        line-height: 80px;
+        width: 160px;
         text-align: center;
-        font-size: 25pt;
+        font-size: 23pt;
     }
     .contactTriangle h2:nth-child(2) {
         right: 0;
@@ -472,11 +472,11 @@ html {
     .desktopFilter {
         cursor: pointer;
         display: inline-block;
-        font: 400 20pt 'Josefin Sans', sans-serif;
+        font: 400 15pt 'Josefin Sans', sans-serif;
         text-align: center;
         margin: 7vh 10px;
-        width: 150px;
-        height: 60px;
+        width: 100px;
+        height: 50px;
         line-height: 50px;
     }
     .choice {
@@ -488,7 +488,7 @@ html {
     #loaderSVG{
         position: absolute;
         z-index: -5;
-        top: 100px;
+        top: 200px;
         left: 0;
         right: 0;
         transform: rotate(90deg);
@@ -496,6 +496,9 @@ html {
     #loaderSVG svg {
         width: 200px;
         margin: -15px auto;
+    }
+    .worksContent{
+        margin-top: 50px;
     }
 }
 

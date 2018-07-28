@@ -111,6 +111,8 @@ if (window.location.pathname.includes("works")) {
         let filterOption = document.querySelector("#currentOpt");
         filterOption.classList.toggle("invisible")
         data.forEach(item => {
+            let currentOption = new URLSearchParams(window.location.search)
+            let curCat = currentOption.get("category");
             if(mobile.matches){
                 inMobilePage = true;
             }
@@ -122,7 +124,13 @@ if (window.location.pathname.includes("works")) {
             header.classList.toggle("dontDisplay");
             /*Desktop Filter*/
             if (breakpoint.matches) {
+                document.querySelector(".desktopAll").addEventListener('click', function(){
+                    window.location.href = "works.html";
+                })
                 inDesktopPage = true;
+                if (curCat == item.id){
+                    header.classList.toggle("choice")
+                }
                 filterOption.classList.toggle("dontDisplay")
                 header.classList.toggle("dontDisplay");
                 header.classList.add("desktopFilter");
@@ -133,10 +141,12 @@ if (window.location.pathname.includes("works")) {
             header.addEventListener('click', function () {
                 window.location.href = "works.html?category=" + item.id;
             })
+            if(window.location.href.includes("category")){
+               document.querySelector(".desktopAll").classList.toggle("choice")
+               }
             /*SHOW CURRENT FILTER OPTION*/
 
-            let currentOption = new URLSearchParams(window.location.search)
-            let curCat = currentOption.get("category");
+
             if (curCat == item.id) {
                 filterOption.textContent = item.name + " Projects";
             }
