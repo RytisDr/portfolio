@@ -87,8 +87,16 @@ if (window.location.pathname.includes("works")) {
 
         let clone = template.cloneNode(true);
         clone.querySelector(".workTitle").textContent = aWork.title.rendered;
-        clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium;
         clone.querySelector(".worksImg").alt = aWork.acf.image.alt;
+        if(mobile.matches){
+            inMobilePage = true;
+        clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium;
+            }
+        if(breakpoint.matches){
+            inDesktopPage = true;
+        clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium_large;
+        }
+
 
         clone.querySelector(".singleWork").addEventListener('click', showSubpage)
 
@@ -98,10 +106,11 @@ if (window.location.pathname.includes("works")) {
         worksSection.appendChild(clone);
         worksSection.classList.toggle("invisible");
         document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
+         window.addEventListener('resize', refresh)
     }
 
 
-    /*BUIL MENU*/
+    /*BUILD MENU*/
 
     fetch("http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/categories?_embed&parent=54")
         .then(e => e.json())
@@ -197,7 +206,7 @@ if (window.location.pathname.includes("project")) {
     function showSingleWork(aProject) {
 
         let clone = subTemplate.cloneNode(true);
-        clone.querySelector("#subpageImg").src = aProject.acf.image.sizes.medium_large
+        clone.querySelector("#subpageImg").src = aProject.acf.image.sizes.large
         clone.querySelector("#subpageImg").alt = aProject.acf.image.alt
         clone.querySelector("#subpageTitle").textContent = aProject.title.rendered
         clone.querySelector("#description").textContent = aProject.acf.full_description

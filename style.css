@@ -235,7 +235,6 @@ html {
 }
 
 .worksImg {
-
     border: solid 2px black;
     margin: 25px auto 0;
     width: 270px;
@@ -366,7 +365,7 @@ html {
 
 #subpageImg {
     width: 100vw;
-   /* max-width: 525px;*/
+    /* max-width: 525px;*/
     cursor: pointer;
 }
 
@@ -414,7 +413,6 @@ html {
         top: 0;
         left: 0;
         right: 0;
-
     }
     .contactTriangle,
     .worksTriangle,
@@ -475,7 +473,7 @@ html {
         display: inline-block;
         font: 400 15pt 'Josefin Sans', sans-serif;
         text-align: center;
-        margin: 7vh 10px;
+        margin: 7vh auto 7vh 3vw;
         width: 100px;
         height: 50px;
         line-height: 50px;
@@ -487,19 +485,22 @@ html {
         margin: auto;
     }
     #loaderSVG {
-        position: absolute;
-        z-index: -5;
-        top: 200px;
-        left: 0;
-        right: 0;
-        transform: rotate(90deg);
+        top: 100px;
     }
     #loaderSVG svg {
         width: 200px;
         margin: -15px auto;
     }
     .worksContent {
-        margin-top: 50px;
+        width: 90vw;
+        margin: 70px auto;
+        grid-template-columns: repeat(auto-fill, minmax(360px, auto));
+    }
+    .worksImg{
+        width: 330px;
+    }
+    .workTitle{
+        font-size: 18pt;
     }
     .worksTriangle.inSubPage {
         background-color: #877E60;
@@ -515,21 +516,24 @@ html {
         margin-right: auto;
         width: 657px;
     }
-    #singleProject h1{
+    #singleProject h1 {
         font-size: 27pt;
     }
-    #singleProject h2, #singleProject a{
+    #singleProject h2,
+    #singleProject a {
         font-size: 20pt;
     }
-    #singleProject p{
+    #singleProject p {
         font-size: 15pt;
     }
-    .mobileNav{
+    .mobileNav {
         /*position: fixed;*/
     }
 }
+
 /*BREAKPOINT 2*/
-@media only screen and (min-width: 1200px){
+
+@media only screen and (min-width: 1200px) {
     .indexContent h1 {
         font-size: 18pt;
     }
@@ -540,13 +544,35 @@ html {
     #me {
         max-width: 350px;
     }
-    .contactPage p{
+    .contactPage p {
         font-size: 20pt;
         line-height: 30px;
         margin: 30px auto;
     }
-    .contactPage p:nth-child(1){
+    .contactPage p:nth-child(1) {
         margin-top: 310px;
+    }
+    #desktopFilterSec {
+        margin: auto;
+        height: 170px;
+    }
+    .desktopFilter {
+        font: 400 22pt 'Josefin Sans', sans-serif;
+        width: 170px;
+        height: 60px;
+        line-height: 60px;
+    }
+    .worksContent {
+        grid-template-columns: repeat(auto-fill, minmax(370px, auto));
+    }
+    .worksImg {
+        width: 400px;
+    }
+    .workTitle{
+        font-size: 25pt;
+    }
+    .homeTriangle {
+        right: -750px;
     }
 }
 
