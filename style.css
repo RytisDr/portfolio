@@ -36,28 +36,7 @@
     fill: #877e60;
 }
 
-#loaderSVG {
-    position: relative;
-    top: 20vw;
-}
 
-#loaderSVG svg:first-child {
-    animation: rotation 5s linear infinite reverse;
-}
-
-#loaderSVG svg {
-    width: 35vw;
-    display: block;
-    margin: -7px auto;
-
-    animation: rotation 5s linear infinite;
-}
-
-@keyframes rotation {
-    to {
-        transform: rotate(-360deg)
-    }
-}
 
 body,
 html {
@@ -127,6 +106,28 @@ html {
 @keyframes headMove {
     to {
         transform: translateY(-10px);
+    }
+}
+
+#loaderSVG {
+    position: relative;
+    top: 10vh;
+}
+
+#loaderSVG svg:first-child {
+    animation: rotation 5s linear infinite reverse;
+}
+
+#loaderSVG svg {
+    width: 35vw;
+    display: block;
+    margin: -8px auto;
+    animation: rotation 5s linear infinite;
+}
+
+@keyframes rotation {
+    to {
+        transform: rotate(-360deg)
     }
 }
 
@@ -401,6 +402,7 @@ html {
     }
     .indexContent {
         margin-top: 13vh;
+        margin-bottom: 50px;
     }
     #me {
         width: 35vw;
@@ -445,8 +447,12 @@ html {
         top: 0;
         bottom: 0;
         line-height: 90px;
+        width: 170px;
         text-align: center;
         font-size: 25pt;
+    }
+    .contactTriangle h2:nth-child(2) {
+        right: 0;
     }
     .contactPage p {
         width: 450px;
@@ -470,13 +476,27 @@ html {
         text-align: center;
         margin: 7vh 10px;
         width: 150px;
-        height: 50px;
+        height: 60px;
         line-height: 50px;
     }
-    .choice{
+    .choice {
         border: solid 2px black
     }
-
+    .worksImg {
+        margin: auto;
+    }
+    #loaderSVG{
+        position: absolute;
+        z-index: -5;
+        top: 100px;
+        left: 0;
+        right: 0;
+        transform: rotate(90deg);
+    }
+    #loaderSVG svg {
+        width: 200px;
+        margin: -15px auto;
+    }
 }
 
 

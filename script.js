@@ -5,13 +5,12 @@ let inMobilePage = false;
 let inDesktopPage = false;
 
  /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN RESIZING TO BREAKPOINT*/
-        window.addEventListener('resize', refresh)
 
         function refresh() {
             if (mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage) {
                 location.reload()
             }
-
+        }
 
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
@@ -35,19 +34,19 @@ if (window.location.pathname.includes("index")) {
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             navContact.classList.toggle("homeTriangle");
             inMobilePage = true;
-        } else {
+        } else if(breakpoint.matches){
             document.querySelector(".contactTriangle").classList.toggle("inContact");
             document.querySelector(".contactTriangle h2").classList.toggle("fontColorSwitch");
             document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             inDesktopPage = true;
         }
-
+         window.addEventListener('resize', refresh)
 
         }
     }
 
-}
+
 
 /*WORKS SCRIPT*/
 
@@ -100,7 +99,7 @@ if (window.location.pathname.includes("works")) {
         worksSection.classList.toggle("invisible");
         document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     }
-    fetchWorks();
+
 
     /*BUIL MENU*/
 
@@ -130,6 +129,7 @@ if (window.location.pathname.includes("works")) {
                 document.querySelector("#desktopFilterSec").appendChild(header);
                 document.querySelector("#desktopFilterSec").classList.toggle("invisible")
             }
+             window.addEventListener('resize', refresh)
             header.addEventListener('click', function () {
                 window.location.href = "works.html?category=" + item.id;
             })
@@ -161,7 +161,7 @@ if (window.location.pathname.includes("works")) {
         })
 
     }
-
+fetchWorks();
 }
 
 /*SINGLE PROJECT SUBPAGE SCRIPT*/
