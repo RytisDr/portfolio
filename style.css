@@ -432,10 +432,10 @@ html {
     }
     .contactTriangle,
     .homeTriangle {
-        right: -500px;
+        right: -450px;
     }
     .worksTriangle {
-        left: -500px;
+        left: -450px;
         background-color: white;
     }
     .contactTriangle h2,
@@ -465,7 +465,6 @@ html {
         display: none;
     }
     #desktopFilterSec {
-        margin: auto 20vw auto auto;
         height: 150px;
     }
     .desktopFilter {
@@ -485,7 +484,11 @@ html {
         margin: auto;
     }
     #loaderSVG {
-        top: 100px;
+        top: 23vh;
+        position: absolute;
+        z-index: -5;
+        left: 0;
+        right: 0;
     }
     #loaderSVG svg {
         width: 200px;
@@ -496,10 +499,10 @@ html {
         margin: 70px auto;
         grid-template-columns: repeat(auto-fill, minmax(360px, auto));
     }
-    .worksImg{
+    .worksImg {
         width: 330px;
     }
-    .workTitle{
+    .workTitle {
         font-size: 18pt;
     }
     .worksTriangle.inSubPage {
@@ -533,6 +536,25 @@ html {
 
 /*BREAKPOINT 2*/
 
+@media only screen and (min-width: 900px) {
+    #desktopFilterSec {
+        margin: auto;
+        width: 70%;
+    }
+    .contactTriangle,
+    .homeTriangle {
+        right: -550px;
+    }
+    .worksTriangle {
+        left: -550px;
+    }
+    #loaderSVG {
+        top: 27vh;
+    }
+}
+
+/*BREAKPOINT 3*/
+
 @media only screen and (min-width: 1200px) {
     .indexContent h1 {
         font-size: 18pt;
@@ -553,9 +575,9 @@ html {
         margin-top: 310px;
     }
     #desktopFilterSec {
-        margin: auto;
-        height: 170px;
+        width: 90%;
     }
+
     .desktopFilter {
         font: 400 22pt 'Josefin Sans', sans-serif;
         width: 170px;
@@ -563,18 +585,50 @@ html {
         line-height: 60px;
     }
     .worksContent {
+        width: 80vw;
         grid-template-columns: repeat(auto-fill, minmax(370px, auto));
     }
     .worksImg {
         width: 400px;
     }
-    .workTitle{
+    .workTitle {
         font-size: 25pt;
     }
     .homeTriangle {
         right: -750px;
     }
+    #loaderSVG {
+        top: 30vh;
+    }
 }
+
+/*BREAKPOINT 4*/
+
+@media only screen and (min-width: 1400px) {
+    .contactTriangle,
+    .worksTriangle,
+    .homeTriangle {
+        top: 70px;
+    }
+    .desktopFilter {
+        margin: 80px auto 7vh 3vw;
+    }
+    #desktopFilterSec {
+        width: 67%;
+    }
+    .contactTriangle,
+    .homeTriangle {
+        right: -900px;
+    }
+    .worksTriangle {
+        left: -900px;
+    }
+    .worksContent {
+        width: 70vw;
+        margin: 100px auto;
+    }
+}
+
 
 /*INVISIBLE AND FULL OPACITY CLASSES*/
 

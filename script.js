@@ -129,7 +129,7 @@ if (window.location.pathname.includes("works")) {
             let option = document.createElement("h1");
             header.textContent = item.name;
             navFilter.appendChild(header);
-            option.classList.toggle("dontDisplay");
+           /* option.classList.toggle("dontDisplay");*/
             header.classList.toggle("dontDisplay");
             /*Desktop Filter*/
             if (breakpoint.matches) {
@@ -223,8 +223,9 @@ if (window.location.pathname.includes("project")) {
             clone.querySelector("#downloadLink").href = aProject.acf.file.url
             clone.querySelector("#downloadLink").classList.toggle("dontDisplay")
         }
-        subpage.appendChild(clone)
         document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
+        subpage.appendChild(clone)
+
     }
 
 }
