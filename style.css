@@ -348,7 +348,9 @@ html {
 }
 
 /*SINGLE PROJECT PAGE*/
-
+#explanation img{
+    display: inline;
+}
 /*NAV ADJUSTMENTS*/
 
 .inSubPage {
@@ -373,17 +375,17 @@ html {
     margin-bottom: 40px;
 }
 
-#singleProject p {
+#singleProject p, #explanation a {
     font-family: 'Work Sans', sans-serif;
     font-size: 13pt;
 }
 
 #singleProject a {
-    position: absolute;
-    right: 20px;
-    top: 10px;
-}
 
+}
+#explanation a{
+    position: inherit;
+}
 #singleProject a:nth-child(3) {
     top: 50px;
 }
@@ -524,11 +526,12 @@ html {
     }
     #singleProject h2,
     #singleProject a {
-        font-size: 20pt;
+
     }
     #singleProject p {
         font-size: 15pt;
     }
+
     .mobileNav {
         /*position: fixed;*/
     }

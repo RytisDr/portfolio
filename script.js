@@ -67,9 +67,9 @@ if (window.location.pathname.includes("works")) {
 
     function fetchWorks() {
 
-        let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=5&page=" + page
+        let endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=5&page=" + page
         if (catid) {
-            endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=5&page=" + page + "&categories=" + catid
+            endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=5&page=" + page + "&categories=" + catid
         }
 
         fetch(endpoint)
@@ -113,7 +113,7 @@ if (window.location.pathname.includes("works")) {
 
     /*BUILD MENU*/
 
-    fetch("http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/categories?_embed&parent=54")
+    fetch("https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/categories?_embed&parent=54")
         .then(e => e.json())
         .then(buildMenu)
 
@@ -200,7 +200,7 @@ if (window.location.pathname.includes("project")) {
     let subpage = document.querySelector("#singleProject")
     let subTemplate = document.querySelector("#subTemp").content
 
-    let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works/" + id
+    let endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works/" + id
 
     fetch(endpoint)
         .then(e => e.json())
@@ -212,9 +212,9 @@ if (window.location.pathname.includes("project")) {
         let projectExplanation = aProject.acf.info_how;
         clone.querySelector("#subpageImg").src = aProject.acf.image.sizes.large;
         clone.querySelector("#subpageImg").alt = aProject.acf.image.alt;
-        clone.querySelector("#subpageTitle").textContent = aProject.title.rendered;
+        clone.querySelector("#subpageTitle").innerHTML = aProject.title.rendered;
         clone.querySelector("#description").textContent = aProject.acf.description;
-        clone.querySelector("#explanation").appendChild(projectExplanation);
+        clone.querySelector("#explanation").innerHTML = aProject.acf.info_how;
         if (aProject.acf.link) {
             clone.querySelector("#visitLink").classList.toggle("dontDisplay")
             clone.querySelector("#visitLink").href = aProject.acf.link
