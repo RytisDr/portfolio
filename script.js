@@ -89,7 +89,7 @@ if (window.location.pathname.includes("works")) {
     function showSingleWork(aWork) {
 
         let clone = template.cloneNode(true);
-        clone.querySelector(".workTitle").textContent = aWork.title.rendered
+        clone.querySelector(".workTitle").innerHTML = aWork.title.rendered
         clone.querySelector(".worksImg").alt = aWork.acf.image.alt
         if (mobile.matches) {
             inMobilePage = true;
@@ -216,11 +216,13 @@ if (window.location.pathname.includes("project")) {
         clone.querySelector("#description").textContent = aProject.acf.description;
         clone.querySelector("#explanation").innerHTML = aProject.acf.info_how;
         if (aProject.acf.link) {
-            clone.querySelector("#visitLink").classList.toggle("dontDisplay")
-            clone.querySelector("#visitLink").href = aProject.acf.link
-            clone.querySelector("#subpageImg").addEventListener('click', function () {
+             function goToProject() {
                 window.open(aProject.acf.link, '_blank')
-            })
+            }
+            clone.querySelector("#visitLink").classList.toggle("dontDisplay")
+            clone.querySelector("#visitLink").addEventListener('click', goToProject)
+            clone.querySelector("#subpageImg").addEventListener('click', goToProject)
+
         }
         if (aProject.acf.file) {
 
