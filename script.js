@@ -4,13 +4,13 @@ let breakpoint = window.matchMedia("(min-width: 666px)");
 let inMobilePage = false;
 let inDesktopPage = false;
 
- /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN RESIZING TO BREAKPOINT*/
+/*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN RESIZING TO BREAKPOINT*/
 
-        function refresh() {
-            if (mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage) {
-                location.reload()
-            }
-        }
+function refresh() {
+    if (mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage) {
+        location.reload()
+    }
+}
 
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
@@ -34,17 +34,17 @@ if (window.location.pathname.includes("index")) {
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             navContact.classList.toggle("homeTriangle");
             inMobilePage = true;
-        } else if(breakpoint.matches){
+        } else if (breakpoint.matches) {
             document.querySelector(".contactTriangle").classList.toggle("inContact");
             document.querySelector(".contactTriangle h2").classList.toggle("fontColorSwitch");
             document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             inDesktopPage = true;
         }
-         window.addEventListener('resize', refresh)
+        window.addEventListener('resize', refresh)
 
-        }
     }
+}
 
 
 
@@ -55,7 +55,6 @@ let id = urlParams.get("id");
 
 
 if (window.location.pathname.includes("works")) {
-    document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
     let navFilter = document.querySelector(".filterTriangle");
     let worksSection = document.querySelector(".worksContent");
     let page = 1;
@@ -67,12 +66,15 @@ if (window.location.pathname.includes("works")) {
     })
 
     function fetchWorks() {
-        let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=3&page=" + page
+
+        let endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=5&page=" + page
         if (catid) {
-            endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=3&page=" + page + "&categories=" + catid
+            endpoint = "http://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=5&page=" + page + "&categories=" + catid
         }
+
         fetch(endpoint)
             .then(e => {
+                document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
                 let worksPages = e.headers.get("X-WP-TotalPages")
                 return e.json()
             })
@@ -80,34 +82,34 @@ if (window.location.pathname.includes("works")) {
     }
 
     function showWorks(data) {
+
         data.forEach(showSingleWork)
     }
 
     function showSingleWork(aWork) {
 
         let clone = template.cloneNode(true);
-        clone.querySelector(".workTitle").textContent = aWork.title.rendered;
-        clone.querySelector(".worksImg").alt = aWork.acf.image.alt;
-        if(mobile.matches){
+        clone.querySelector(".workTitle").textContent = aWork.title.rendered
+        clone.querySelector(".worksImg").alt = aWork.acf.image.alt
+        if (mobile.matches) {
             inMobilePage = true;
-        clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium;
-            }
-        if(breakpoint.matches){
-            inDesktopPage = true;
-        clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium_large;
+            clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium
         }
-
-
-        clone.querySelector(".singleWork").addEventListener('click', showSubpage)
+        if (breakpoint.matches) {
+            inDesktopPage = true;
+            clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium_large
+        }
 
         function showSubpage() {
             window.location.href = "project.html?id=" + aWork.id;
         }
+        clone.querySelector(".singleWork").addEventListener('click', showSubpage)
+
         worksSection.appendChild(clone);
-        worksSection.classList.toggle("invisible");
-        document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
-         window.addEventListener('resize', refresh)
+
+        window.addEventListener('resize', refresh)
     }
+
 
 
     /*BUILD MENU*/
@@ -118,26 +120,25 @@ if (window.location.pathname.includes("works")) {
 
     function buildMenu(data) {
         let filterOption = document.querySelector("#currentOpt");
-        filterOption.classList.toggle("invisible")
+        filterOption.classList.toggle("invisible");
         data.forEach(item => {
             let currentOption = new URLSearchParams(window.location.search)
             let curCat = currentOption.get("category");
-            if(mobile.matches){
+            if (mobile.matches) {
                 inMobilePage = true;
             }
             let header = document.createElement("h2");
             let option = document.createElement("h1");
             header.textContent = item.name;
             navFilter.appendChild(header);
-           /* option.classList.toggle("dontDisplay");*/
             header.classList.toggle("dontDisplay");
             /*Desktop Filter*/
             if (breakpoint.matches) {
-                document.querySelector(".desktopAll").addEventListener('click', function(){
+                document.querySelector(".desktopAll").addEventListener('click', function () {
                     window.location.href = "works.html";
                 })
                 inDesktopPage = true;
-                if (curCat == item.id){
+                if (curCat == item.id) {
                     header.classList.toggle("choice")
                 }
                 filterOption.classList.toggle("dontDisplay")
@@ -146,13 +147,13 @@ if (window.location.pathname.includes("works")) {
                 document.querySelector("#desktopFilterSec").appendChild(header);
                 document.querySelector("#desktopFilterSec").classList.toggle("invisible")
             }
-             window.addEventListener('resize', refresh)
+            window.addEventListener('resize', refresh)
             header.addEventListener('click', function () {
                 window.location.href = "works.html?category=" + item.id;
             })
-            if(window.location.href.includes("category")){
-               document.querySelector(".desktopAll").classList.toggle("choice")
-               }
+            if (window.location.href.includes("category")) {
+                document.querySelector(".desktopAll").classList.toggle("choice")
+            }
             /*SHOW CURRENT FILTER OPTION*/
 
 
@@ -180,7 +181,10 @@ if (window.location.pathname.includes("works")) {
         })
 
     }
-fetchWorks();
+    fetchWorks();
+
+    document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
+
 }
 
 /*SINGLE PROJECT SUBPAGE SCRIPT*/
@@ -206,11 +210,12 @@ if (window.location.pathname.includes("project")) {
     function showSingleWork(aProject) {
 
         let clone = subTemplate.cloneNode(true);
-        clone.querySelector("#subpageImg").src = aProject.acf.image.sizes.large
-        clone.querySelector("#subpageImg").alt = aProject.acf.image.alt
-        clone.querySelector("#subpageTitle").textContent = aProject.title.rendered
-        clone.querySelector("#description").textContent = aProject.acf.full_description
-        clone.querySelector("#explanation").textContent = aProject.acf.info_how
+        let projectExplanation = aProject.acf.info_how;
+        clone.querySelector("#subpageImg").src = aProject.acf.image.sizes.large;
+        clone.querySelector("#subpageImg").alt = aProject.acf.image.alt;
+        clone.querySelector("#subpageTitle").textContent = aProject.title.rendered;
+        clone.querySelector("#description").textContent = aProject.acf.description;
+        clone.querySelector("#explanation").appendChild(projectExplanation);
         if (aProject.acf.link) {
             clone.querySelector("#visitLink").classList.toggle("dontDisplay")
             clone.querySelector("#visitLink").href = aProject.acf.link
