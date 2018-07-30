@@ -75,6 +75,7 @@ if (window.location.pathname.includes("works")) {
         fetch(endpoint)
             .then(e => {
                 document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
+                document.querySelector(".worksContent").classList.toggle("invisible");
                 let worksPages = e.headers.get("X-WP-TotalPages")
                 return e.json()
             })
@@ -82,7 +83,6 @@ if (window.location.pathname.includes("works")) {
     }
 
     function showWorks(data) {
-
         data.forEach(showSingleWork)
     }
 
@@ -104,7 +104,6 @@ if (window.location.pathname.includes("works")) {
             window.location.href = "project.html?id=" + aWork.id;
         }
         clone.querySelector(".singleWork").addEventListener('click', showSubpage)
-
         worksSection.appendChild(clone);
 
         window.addEventListener('resize', refresh)
@@ -182,7 +181,7 @@ if (window.location.pathname.includes("works")) {
 
     }
     fetchWorks();
-
+    document.querySelector(".worksContent").classList.toggle("invisible");
     document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
 
 }
