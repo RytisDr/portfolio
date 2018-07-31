@@ -40,7 +40,7 @@
 
 body,
 html {
-    margin: auto
+    margin: auto;
 }
 
 .index {
@@ -212,43 +212,43 @@ html {
 }
 
 /*works page*/
-.desktopFilter{
+
+.desktopFilter {
     display: none;
 }
+
 #currentOpt {
     font: 700 1.5em 'Josefin Sans', sans-serif;
     margin: 30px;
 }
 
-.worksContent{
+.worksContent {
     display: grid;
     margin: auto;
     grid-template-columns: repeat(auto-fill, minmax(270px, auto));
-    margin-bottom: 120px;
+    margin-bottom: 150px;
 }
 
 .singleWork {
-    display: grid;
     cursor: pointer;
-    border: solid 2px black;
-    width: 270px;
-    margin: auto;
+    width: 260px;
+    margin: 25px auto;
 }
 
 
 .worksImg {
-    width: 270px;
-
+    width: 260px;
 }
 
 .workTitle,
 #singleProject h1,
 #singleProject h2,
 #singleProject a {
-    width: 270px;
+    width: 260px;
     margin: 5px auto;
     font: 20px 'Josefin Sans', sans-serif;
     color: black;
+    text-align: center;
 }
 
 .homeTriangle h2 {
@@ -348,9 +348,7 @@ html {
 }
 
 /*SINGLE PROJECT PAGE*/
-#explanation img{
-    display: inline;
-}
+
 /*NAV ADJUSTMENTS*/
 
 .inSubPage {
@@ -365,35 +363,45 @@ html {
     width: 94px;
 }
 
-#subpageImg {
+/*////////////////////*/
+
+#singleProject img {
+    max-width: 100%;
     width: 100vw;
-    /* max-width: 525px;*/
+    max-width: 100%;
     cursor: pointer;
+    display: block;
+
 }
 
 #singleProject h1 {
+    font-size: 17pt;
     margin-bottom: 40px;
+    width: 100vw;
+    max-width: 100%;
 }
 
-#singleProject p, #explanation a {
+#singleProject p,
+#explanation a {
     font-family: 'Work Sans', sans-serif;
     font-size: 13pt;
 }
 
-#singleProject a {
+#subpageText p {
+    padding: 10px 20px;
+    text-indent: 20pt;
+}
 
-}
-#explanation a{
-    position: inherit;
-}
-#singleProject a:nth-child(3) {
-    top: 50px;
+pre img {
+    display: block;
+    margin: auto;
+    width: 100vw;
+    max-width: 525px;
+    height: auto;
 }
 
 #subpageText {
-    padding: 10px 20px;
-    margin-bottom: 100px;
-    position: relative;
+    margin-bottom: 135px;
 }
 
 /*BREAKPOINT 1*/
@@ -496,7 +504,7 @@ html {
         width: 200px;
         margin: -15px auto;
     }
-    .worksContent{
+    .worksContent {
         width: 90vw;
         margin: 70px auto;
         grid-template-columns: repeat(auto-fill, minmax(360px, auto));
@@ -603,7 +611,7 @@ html {
     #loaderSVG {
         top: 30vh;
     }
-    .singleProjectNav .homeTriangle{
+    .singleProjectNav .homeTriangle {
         right: -550px;
     }
 }
@@ -629,13 +637,13 @@ html {
     .worksTriangle {
         left: -900px;
     }
-      .singleProjectNav .homeTriangle{
+    .singleProjectNav .homeTriangle {
         right: -900px;
     }
     .worksContent {
         width: 70vw;
     }
-    .singleProjectNav{
+    .singleProjectNav {
         position: fixed;
     }
 }
