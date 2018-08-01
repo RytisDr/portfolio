@@ -87,24 +87,35 @@ if (window.location.pathname.includes("works")) {
     }
 
     function showSingleWork(aWork) {
+        /* let image = document.querySelector(".worksImg");
+         let downloadingImage = new Image();
+         ;*/
+        /*downloadingImage.src = "http://an.image/to/aynchrounously/download.jpg";*/
 
         let clone = template.cloneNode(true);
+        let cloneImg = clone.querySelector(".worksImg");
         clone.querySelector(".workTitle").innerHTML = aWork.title.rendered
         clone.querySelector(".worksImg").alt = aWork.acf.image.alt
         if (mobile.matches) {
             inMobilePage = true;
-            clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium
+            cloneImg.src = aWork.acf.image.sizes.medium
         }
         if (breakpoint.matches) {
             inDesktopPage = true;
-            clone.querySelector(".worksImg").src = aWork.acf.image.sizes.medium_large
+            cloneImg.src = aWork.acf.image.sizes.medium_large
         }
+
+        let downloadingImage = new Image();
+        downloadingImage.src = cloneImg.src;
 
         function showSubpage() {
             window.location.href = "project.html?id=" + aWork.id;
         }
         clone.querySelector(".singleWork").addEventListener('click', showSubpage)
-        worksSection.appendChild(clone);
+        /*this function is here to delay the individual items showing until the src file was fetched*/
+        downloadingImage.onload = function () {
+            worksSection.appendChild(clone);
+        }
 
         window.addEventListener('resize', refresh)
     }
@@ -216,7 +227,7 @@ if (window.location.pathname.includes("project")) {
         clone.querySelector("#description").textContent = aProject.acf.description;
         clone.querySelector("#explanation").innerHTML = aProject.acf.info_how;
         if (aProject.acf.link) {
-             function goToProject() {
+            function goToProject() {
                 window.open(aProject.acf.link, '_blank')
             }
             clone.querySelector("#visitLink").classList.toggle("dontDisplay")
