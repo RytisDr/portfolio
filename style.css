@@ -52,7 +52,8 @@ html {
 .transitionAll {
     transition: all 0.5s;
 }
-.transitionAllLonger{
+
+.transitionAllLonger {
     transition: all 1s;
 }
 
@@ -371,15 +372,15 @@ html {
 #singleProject img {
     max-width: 100%;
     width: 100vw;
-    max-width: 100%;
-    cursor: pointer;
-    display: block;
+}
 
+#subpageImg {
+    cursor: pointer;
 }
 
 #singleProject h1 {
-    font-size: 17pt;
-    margin-bottom: 40px;
+    font-size: 18pt;
+    margin: 40px 0 40px 0;
     width: 100vw;
     max-width: 100%;
 }
@@ -390,8 +391,20 @@ html {
     font-size: 13pt;
 }
 
+#subpageText #visitLink,
+#subpageText #downloadLink{
+    display:block;
+   margin: 0 20px;
+    width: 120px;
+    height: 40px;
+    line-height: 40px;
+}
+#subpageText #downloadLink{
+    margin: -40px 0 0 150px;
+}
+
 #subpageText p {
-    padding: 10px 20px;
+    padding: 0 20px;
     text-indent: 20pt;
 }
 
@@ -404,7 +417,7 @@ pre img {
 }
 
 #subpageText {
-    margin-bottom: 135px;
+    margin-bottom: 140px;
 }
 
 /*BREAKPOINT 1*/
