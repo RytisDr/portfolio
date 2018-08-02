@@ -206,7 +206,7 @@ html {
 }
 
 .contactPage {
-    margin: 25vh 0 150px;
+    margin: 230px 0 150px;
     padding: 0 12vw;
 }
 
@@ -235,7 +235,6 @@ html {
 
 .singleWork {
     cursor: pointer;
-    width: 260px;
     margin: 25px auto;
 }
 
@@ -385,26 +384,34 @@ html {
     width: 100vw;
     max-width: 100%;
 }
-#singleProject h2{
+
+#singleProject h2 {
     font-size: 16pt;
+    margin: auto 0 0 20px;
+    text-align: left;
+    width: auto;
 }
+
 #singleProject p,
 #explanation a {
     font-family: 'Work Sans', sans-serif;
     font-size: 13pt;
 }
-.topLinks{
-    margin-top: 5px;
+
+.topLinks {
+    margin-top: 10px;
     display: grid;
     grid-auto-columns: 1fr 1fr;
 }
+
 #subpageText #visitLink,
-#subpageText #downloadLink{
-   margin: auto;
-   width: 120px;
+#subpageText #downloadLink {
+    margin: auto;
+    width: 120px;
     font-size: 15pt;
 }
-#subpageText #downloadLink{
+
+#subpageText #downloadLink {
     grid-column: 2;
 }
 
@@ -503,7 +510,7 @@ pre img {
         display: inline-block;
         font: 400 15pt 'Josefin Sans', sans-serif;
         text-align: center;
-        margin: 7vh auto 7vh 3vw;
+        margin: 65px auto 7vh 2vw;
         width: 100px;
         height: 50px;
         line-height: 50px;
@@ -526,11 +533,11 @@ pre img {
         margin: -15px auto;
     }
     .worksContent {
-        width: 90vw;
         margin: 70px auto;
         grid-template-columns: repeat(auto-fill, minmax(360px, auto));
     }
-    .worksImg {
+    .worksImg,
+    .workTitle {
         width: 330px;
     }
     .workTitle {
@@ -539,6 +546,8 @@ pre img {
     .worksTriangle.inSubPage {
         background-color: #877E60;
     }
+
+    /*SINGLE PROJECT PAGE*/
     #singleProject {
         margin: auto;
         width: 657px;
@@ -550,19 +559,23 @@ pre img {
         margin-right: auto;
         width: 657px;
     }
-    #singleProject h1 {
-        font-size: 27pt;
+    #subpageText #visitLink,
+    #subpageText #downloadLink {
+        width: 130px;
+        font-size: 17pt;
     }
-    #singleProject h2,
+    #singleProject h1 {
+        font-size: 25pt;
+        margin: 40px 0 40px 0;
+    }
+    #singleProject h2 {
+        font-size: 18pt;
+    }
     #singleProject a {
         font-size: 15pt;
     }
     #singleProject p {
         font-size: 15pt;
-    }
-
-    .mobileNav {
-        /*position: fixed;*/
     }
 }
 
@@ -582,6 +595,9 @@ pre img {
     }
     #loaderSVG {
         top: 27vh;
+    }
+    .worksContent {
+        width: 900px;
     }
 }
 
@@ -615,16 +631,18 @@ pre img {
         width: 170px;
         height: 60px;
         line-height: 60px;
+        margin: 55px auto 7vh 3vw;
     }
     .worksContent {
-        width: 80vw;
+        width: 1200px;
         grid-template-columns: repeat(auto-fill, minmax(420px, auto));
     }
-    .worksImg {
+    .worksImg,
+    .workTitle {
         width: 400px;
     }
     .workTitle {
-        font-size: 25pt;
+        font-size: 18pt;
     }
     .homeTriangle {
         right: -750px;
@@ -646,10 +664,10 @@ pre img {
         top: 60px;
     }
     .desktopFilter {
-        margin: 70px auto 7vh 3vw;
+        margin: 70px auto 8vh 30px;
     }
     #desktopFilterSec {
-        width: 67%;
+        width: 1100px;
     }
     .contactTriangle,
     .homeTriangle {
@@ -662,7 +680,8 @@ pre img {
         right: -900px;
     }
     .worksContent {
-        width: 70vw;
+        width: 1200px;
+        grid-template-columns: repeat(auto-fill, minmax(430px, auto));
     }
     .singleProjectNav {
         position: fixed;
