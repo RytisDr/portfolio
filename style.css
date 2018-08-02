@@ -634,7 +634,7 @@ pre img {
         margin: 55px auto 7vh 3vw;
     }
     .worksContent {
-        width: 1200px;
+        width: 1000px;
         grid-template-columns: repeat(auto-fill, minmax(420px, auto));
     }
     .worksImg,
@@ -680,7 +680,7 @@ pre img {
         right: -900px;
     }
     .worksContent {
-        width: 1200px;
+        width: 1000px;
         grid-template-columns: repeat(auto-fill, minmax(430px, auto));
     }
     .singleProjectNav {
