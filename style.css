@@ -230,7 +230,7 @@ html {
     display: grid;
     margin: auto;
     grid-template-columns: repeat(auto-fill, minmax(270px, auto));
-    margin-bottom: 150px;
+    margin-bottom: 145px;
 }
 
 .singleWork {
@@ -379,28 +379,33 @@ html {
 }
 
 #singleProject h1 {
+    font-weight: 700;
     font-size: 18pt;
-    margin: 40px 0 40px 0;
+    margin: 25px 0 25px 0;
     width: 100vw;
     max-width: 100%;
 }
-
+#singleProject h2{
+    font-size: 16pt;
+}
 #singleProject p,
 #explanation a {
     font-family: 'Work Sans', sans-serif;
     font-size: 13pt;
 }
-
+.topLinks{
+    margin-top: 5px;
+    display: grid;
+    grid-auto-columns: 1fr 1fr;
+}
 #subpageText #visitLink,
 #subpageText #downloadLink{
-    display:block;
-   margin: 0 20px;
-    width: 120px;
-    height: 40px;
-    line-height: 40px;
+   margin: auto;
+   width: 120px;
+    font-size: 15pt;
 }
 #subpageText #downloadLink{
-    margin: -40px 0 0 150px;
+    grid-column: 2;
 }
 
 #subpageText p {
@@ -417,7 +422,7 @@ pre img {
 }
 
 #subpageText {
-    margin-bottom: 140px;
+    margin-bottom: 145px;
 }
 
 /*BREAKPOINT 1*/

@@ -233,10 +233,8 @@ if (window.location.pathname.includes("project")) {
             clone.querySelector("#visitLink").classList.toggle("dontDisplay")
             clone.querySelector("#visitLink").addEventListener('click', goToProject)
             clone.querySelector("#subpageImg").addEventListener('click', goToProject)
-
         }
         if (aProject.acf.file) {
-
             clone.querySelector("#downloadLink").href = aProject.acf.file.url
             clone.querySelector("#downloadLink").classList.toggle("dontDisplay")
         }
