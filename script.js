@@ -87,10 +87,6 @@ if (window.location.pathname.includes("works")) {
     }
 
     function showSingleWork(aWork) {
-        /* let image = document.querySelector(".worksImg");
-         let downloadingImage = new Image();
-         ;*/
-        /*downloadingImage.src = "http://an.image/to/aynchrounously/download.jpg";*/
 
         let clone = template.cloneNode(true);
         let cloneImg = clone.querySelector(".worksImg");

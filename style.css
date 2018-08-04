@@ -254,6 +254,13 @@ html {
     text-align: center;
 }
 
+#plusButton{
+       border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-top: 50px solid #7A6048;
+    width: 0;
+}
+
 .homeTriangle h2 {
     color: white;
 }
