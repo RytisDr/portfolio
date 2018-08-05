@@ -59,6 +59,7 @@ if (window.location.pathname.includes("works")) {
     let worksSection = document.querySelector(".worksContent");
     let page = 1;
     let worksPages = 0;
+    let loaderAnimation = document.querySelector("#loaderSVG");
     let plusButton = document.querySelector("#plusButton");
     let template = document.querySelector("#worksTemp").content;
     let catid = urlParams.get("category");
@@ -75,13 +76,22 @@ if (window.location.pathname.includes("works")) {
 
         fetch(endpoint)
             .then(e => {
-                document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
+                loaderAnimation.classList.toggle("dontDisplay");
                 document.querySelector(".worksContent").classList.toggle("invisible");
                 worksPages = e.headers.get("X-WP-TotalPages")
                 if (page >= worksPages) {
-                     worksSection.style.marginBottom = "130px"
+                    worksSection.style.marginBottom = "130px"
                     plusButton.classList.add("dontDisplay");
                 }
+                if (page < worksPages) {
+                plusButton.classList.remove("dontDisplay");
+                worksSection.style.marginBottom = "25px";
+                plusButton.addEventListener('click', function () {
+
+                    page++;
+                    fetchAgain();
+                })
+            }
                 return e.json()
             })
 
@@ -106,14 +116,7 @@ if (window.location.pathname.includes("works")) {
 
 
     function showSingleWork(aWork) {
-             if (page < worksPages) {
-            plusButton.classList.remove("dontDisplay");
-                 worksSection.style.marginBottom = "25px";
-            plusButton.addEventListener('click', function () {
-                page++;
-                fetchWorks();
-            })
-        }
+
         let clone = template.cloneNode(true);
         let cloneImg = clone.querySelector(".worksImg");
         clone.querySelector(".workTitle").innerHTML = aWork.title.rendered
@@ -137,8 +140,8 @@ if (window.location.pathname.includes("works")) {
         /*this function is here to delay the individual items showing until the src file was fetched*/
         downloadingImage.onload = function () {
             worksSection.appendChild(clone);
-        }
 
+        }
         window.addEventListener('resize', refresh)
     }
 
@@ -212,11 +215,12 @@ if (window.location.pathname.includes("works")) {
         })
 
     }
-
+    fetchAgain();
+    function fetchAgain(){
     fetchWorks();
     document.querySelector(".worksContent").classList.toggle("invisible");
-    document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
-
+    loaderAnimation.classList.toggle("dontDisplay");
+}
 
 }
 
