@@ -78,6 +78,10 @@ if (window.location.pathname.includes("works")) {
                 document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
                 document.querySelector(".worksContent").classList.toggle("invisible");
                 worksPages = e.headers.get("X-WP-TotalPages")
+                if (page >= worksPages) {
+                     worksSection.style.marginBottom = "130px"
+                    plusButton.classList.add("dontDisplay");
+                }
                 return e.json()
             })
 
@@ -95,13 +99,21 @@ if (window.location.pathname.includes("works")) {
     })
 */
     function showWorks(data) {
+
         data.forEach(showSingleWork);
 
     }
 
 
     function showSingleWork(aWork) {
-
+             if (page < worksPages) {
+            plusButton.classList.remove("dontDisplay");
+                 worksSection.style.marginBottom = "25px";
+            plusButton.addEventListener('click', function () {
+                page++;
+                fetchWorks();
+            })
+        }
         let clone = template.cloneNode(true);
         let cloneImg = clone.querySelector(".worksImg");
         clone.querySelector(".workTitle").innerHTML = aWork.title.rendered
@@ -126,16 +138,7 @@ if (window.location.pathname.includes("works")) {
         downloadingImage.onload = function () {
             worksSection.appendChild(clone);
         }
-        if (page >= worksPages) {
-            plusButton.classList.add("dontDisplay");
-        }
-        if (page < worksPages) {
-            plusButton.classList.remove("dontDisplay");
-            plusButton.addEventListener('click', function () {
-                page++;
-                fetchWorks();
-            })
-        }
+
         window.addEventListener('resize', refresh)
     }
 
@@ -210,9 +213,10 @@ if (window.location.pathname.includes("works")) {
 
     }
 
-       fetchWorks();
+    fetchWorks();
     document.querySelector(".worksContent").classList.toggle("invisible");
     document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
+
 
 }
 
