@@ -69,9 +69,9 @@ if (window.location.pathname.includes("works")) {
 
     function fetchWorks() {
 
-        let endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=4&page=" + page
+        let endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&per_page=4&page=" + page
         if (catid) {
-            endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&order=asc&per_page=4&page=" + page + "&categories=" + catid
+            endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works?_embed&per_page=4&page=" + page + "&categories=" + catid
         }
 
         fetch(endpoint)
@@ -87,7 +87,6 @@ if (window.location.pathname.includes("works")) {
                 plusButton.classList.remove("dontDisplay");
                 worksSection.style.marginBottom = "25px";
                 plusButton.addEventListener('click', function () {
-
                     page++;
                     fetchAgain();
                 })
