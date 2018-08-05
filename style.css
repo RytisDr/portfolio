@@ -230,7 +230,7 @@ html {
     display: grid;
     margin: auto;
     grid-template-columns: repeat(auto-fill, minmax(270px, auto));
-    margin-bottom: 145px;
+    margin-bottom: 130px;
 }
 
 .singleWork {
@@ -254,18 +254,16 @@ html {
     text-align: center;
 }
 
-#plusButton{
-       border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-top: 50px solid #7A6048;
-    width: 0;
-}
+
+
+
+
 
 .homeTriangle h2 {
     color: white;
 }
 
-.filterTriangle {
+.filterTriangle, #plusButton {
     border-left: 105px solid transparent;
     border-right: 105px solid transparent;
     border-top: 105px solid #7A6048;
@@ -355,6 +353,21 @@ html {
     left: 5px;
     bottom: 4px;
     transform: rotate(180deg)
+}
+
+#plusButton{
+  border-top: 105px solid #9AA9B0;
+    margin: auto;
+    position: relative;
+    z-index: 0;
+    cursor: pointer;
+}
+#plusButton h1{
+    position: absolute;
+    top:-110px;
+    left: -25px;
+  font: 500 1.5em 'Josefin Sans', sans-serif;
+    color: white;
 }
 
 /*SINGLE PROJECT PAGE*/

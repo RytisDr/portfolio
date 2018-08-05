@@ -58,9 +58,10 @@ if (window.location.pathname.includes("works")) {
     let navFilter = document.querySelector(".filterTriangle");
     let worksSection = document.querySelector(".worksContent");
     let page = 1;
+    let worksPages = 0;
+    let plusButton = document.querySelector("#plusButton");
     let template = document.querySelector("#worksTemp").content;
     let catid = urlParams.get("category");
-
     document.querySelector(".homeTriangle").addEventListener('click', function () {
         window.location = "index.html";
     })
@@ -76,15 +77,28 @@ if (window.location.pathname.includes("works")) {
             .then(e => {
                 document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
                 document.querySelector(".worksContent").classList.toggle("invisible");
-                let worksPages = e.headers.get("X-WP-TotalPages")
+                worksPages = e.headers.get("X-WP-TotalPages")
                 return e.json()
             })
+
             .then(showWorks)
     }
 
+
+    /*plusButton.addEventListener('click', function () {
+        if (page < worksPages) {
+            page++;
+            fetchWorks();
+        } else if (page >= worksPages) {
+            plusButton.classList.add("dontDisplay");
+        }
+    })
+*/
     function showWorks(data) {
-        data.forEach(showSingleWork)
+        data.forEach(showSingleWork);
+
     }
+
 
     function showSingleWork(aWork) {
 
@@ -112,11 +126,18 @@ if (window.location.pathname.includes("works")) {
         downloadingImage.onload = function () {
             worksSection.appendChild(clone);
         }
-
+        if (page >= worksPages) {
+            plusButton.classList.add("dontDisplay");
+        }
+        if (page < worksPages) {
+            plusButton.classList.remove("dontDisplay");
+            plusButton.addEventListener('click', function () {
+                page++;
+                fetchWorks();
+            })
+        }
         window.addEventListener('resize', refresh)
     }
-
-
 
     /*BUILD MENU*/
 
@@ -127,6 +148,7 @@ if (window.location.pathname.includes("works")) {
     function buildMenu(data) {
         let filterOption = document.querySelector("#currentOpt");
         filterOption.classList.toggle("invisible");
+
         data.forEach(item => {
             let currentOption = new URLSearchParams(window.location.search)
             let curCat = currentOption.get("category");
@@ -187,7 +209,8 @@ if (window.location.pathname.includes("works")) {
         })
 
     }
-    fetchWorks();
+
+       fetchWorks();
     document.querySelector(".worksContent").classList.toggle("invisible");
     document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
 
