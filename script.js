@@ -6,11 +6,14 @@ let inDesktopPage = false;
 
 /*THIS FUNCTION FIXES THE RESIZE PROBLEM WHEN RESIZING TO BREAKPOINT*/
 
+
+
 function refresh() {
     if (mobile.matches && inDesktopPage || breakpoint.matches && inMobilePage) {
         location.reload()
     }
 }
+ window.addEventListener('resize', refresh)
 
 /*INDEX SCRIPT*/
 if (window.location.pathname.includes("index")) {
@@ -41,7 +44,7 @@ if (window.location.pathname.includes("index")) {
             document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
             inDesktopPage = true;
         }
-        window.addEventListener('resize', refresh)
+
 
     }
 }
@@ -53,16 +56,17 @@ if (window.location.pathname.includes("index")) {
 let urlParams = new URLSearchParams(window.location.search);
 let id = urlParams.get("id");
 
-
 if (window.location.pathname.includes("works")) {
-    let navFilter = document.querySelector(".filterTriangle");
-    let worksSection = document.querySelector(".worksContent");
     let page = 1;
     let worksPages = 0;
+
+    let navFilter = document.querySelector(".filterTriangle");
+    let worksSection = document.querySelector(".worksContent");
     let loaderAnimation = document.querySelector("#loaderSVG");
-    let plusButton = document.querySelector("#plusButton");
+    let plusButton = document.querySelector(".plusButton");
     let template = document.querySelector("#worksTemp").content;
     let catid = urlParams.get("category");
+
     document.querySelector(".homeTriangle").addEventListener('click', function () {
         window.location = "index.html";
     })
@@ -138,10 +142,11 @@ if (window.location.pathname.includes("works")) {
         /*this function is here to delay the individual items showing until the src file was fetched*/
         downloadingImage.onload = function () {
             worksSection.appendChild(clone);
-
         }
-        window.addEventListener('resize', refresh)
+
     }
+
+
 
     /*BUILD MENU*/
 
@@ -180,7 +185,7 @@ if (window.location.pathname.includes("works")) {
                 document.querySelector("#desktopFilterSec").appendChild(header);
                 document.querySelector("#desktopFilterSec").classList.toggle("invisible")
             }
-            window.addEventListener('resize', refresh)
+
             header.addEventListener('click', function () {
                 window.location.href = "works.html?category=" + item.id;
             })
@@ -227,7 +232,8 @@ if (window.location.pathname.includes("works")) {
 /*SINGLE PROJECT SUBPAGE SCRIPT*/
 
 if (window.location.pathname.includes("project")) {
-
+    let upArrow = document.querySelector(".upArrow");
+    upArrow.classList.toggle("dontDisplay")
     document.querySelector(".homeTriangle").addEventListener('click', function () {
         window.location = "index.html";
     })
@@ -272,6 +278,13 @@ if (window.location.pathname.includes("project")) {
         downloadingImage.onload = function () {
             subpage.appendChild(clone)
             subpage.classList.toggle("invisible");
+            upArrow.classList.toggle("dontDisplay");
+            upArrow.addEventListener('click', function () {
+                window.scroll({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            })
         }
 
 
