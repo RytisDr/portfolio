@@ -83,14 +83,7 @@ if (window.location.pathname.includes("works")) {
                     worksSection.style.marginBottom = "130px"
                     plusButton.classList.add("dontDisplay");
                 }
-                if (page < worksPages) {
-                plusButton.classList.remove("dontDisplay");
-                worksSection.style.marginBottom = "25px";
-                plusButton.addEventListener('click', function () {
-                    page++;
-                    fetchAgain();
-                })
-            }
+
                 return e.json()
             })
 
@@ -108,9 +101,15 @@ if (window.location.pathname.includes("works")) {
     })
 */
     function showWorks(data) {
-
         data.forEach(showSingleWork);
-
+        if (page < worksPages) {
+            plusButton.classList.remove("dontDisplay");
+            worksSection.style.marginBottom = "25px";
+            plusButton.addEventListener('click', function () {
+                page++;
+                fetchAgain();
+            })
+        }
     }
 
 
@@ -149,6 +148,7 @@ if (window.location.pathname.includes("works")) {
     fetch("https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/categories?_embed&parent=54")
         .then(e => e.json())
         .then(buildMenu)
+
 
     function buildMenu(data) {
         let filterOption = document.querySelector("#currentOpt");
@@ -215,11 +215,12 @@ if (window.location.pathname.includes("works")) {
 
     }
     fetchAgain();
-    function fetchAgain(){
-    fetchWorks();
-    document.querySelector(".worksContent").classList.toggle("invisible");
-    loaderAnimation.classList.toggle("dontDisplay");
-}
+
+    function fetchAgain() {
+        fetchWorks();
+        document.querySelector(".worksContent").classList.toggle("invisible");
+        loaderAnimation.classList.toggle("dontDisplay");
+    }
 
 }
 
@@ -237,6 +238,7 @@ if (window.location.pathname.includes("project")) {
     let subpage = document.querySelector("#singleProject")
     let subTemplate = document.querySelector("#subTemp").content
 
+
     let endpoint = "https://rtsdr.com/kea/07/wp01/wp-json/wp/v2/portfolio_works/" + id
 
     fetch(endpoint)
@@ -252,6 +254,8 @@ if (window.location.pathname.includes("project")) {
         clone.querySelector("#subpageTitle").innerHTML = aProject.title.rendered;
         clone.querySelector("#description").textContent = aProject.acf.description;
         clone.querySelector("#explanation").innerHTML = aProject.acf.info_how;
+        let downloadingImage = new Image();
+        downloadingImage.src = clone.querySelector("#subpageImg").src;
         if (aProject.acf.link) {
             function goToProject() {
                 window.open(aProject.acf.link, '_blank')
@@ -265,7 +269,11 @@ if (window.location.pathname.includes("project")) {
             clone.querySelector("#downloadLink").classList.toggle("dontDisplay")
         }
         document.querySelector("#loaderSVG").classList.toggle("dontDisplay");
-        subpage.appendChild(clone)
+        downloadingImage.onload = function () {
+            subpage.appendChild(clone)
+            subpage.classList.toggle("invisible");
+        }
+
 
     }
 
