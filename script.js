@@ -16,7 +16,7 @@ function refresh() {
  window.addEventListener('resize', refresh)
 
 /*INDEX SCRIPT*/
-if (window.location.pathname.includes("index")) {
+if (document.body.classList.contains("index")) {
     let navContact = document.querySelector(".contactTriangle");
     let navWorks = document.querySelector(".worksTriangle");
     navWorks.addEventListener('click', function () {
