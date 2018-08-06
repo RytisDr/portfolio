@@ -410,7 +410,7 @@ html {
 #singleProject h1 {
     font-weight: 700;
     font-size: 18pt;
-    margin: 25px 0 25px 0;
+    margin: 25px auto;
     width: 100vw;
     max-width: 100%;
 }
@@ -640,7 +640,7 @@ pre img {
     }
     #singleProject h1 {
         font-size: 25pt;
-        margin: 40px 0 40px 0;
+        margin: 40px auto;
     }
     #singleProject h2 {
         font-size: 18pt;
