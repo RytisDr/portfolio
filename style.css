@@ -366,15 +366,24 @@ html {
     width: 130px;
     height: 100px;
     cursor: pointer;
-    transform: rotate(180deg)
-}
 
+
+}
+.plusButton{
+    transform: rotate(180deg);
+}
 
 .plusButton h2 {
     transform: rotate(-180deg);
     padding-bottom: 30px;
 }
-
+/*.plusButton{
+    transition: all 4s;
+    opacity: 0;
+}
+.plusButton.visible{
+    opacity: 1;
+}*/
 /*SINGLE PROJECT PAGE*/
 
 /*NAV ADJUSTMENTS*/
@@ -500,9 +509,7 @@ pre img {
     padding-top: 10px;
     margin: auto;
 }
-.upArrow h2{
-    transform: rotate(180deg);
-}
+
 /*BREAKPOINT 1*/
 
 @media only screen and (min-width: 666px) {

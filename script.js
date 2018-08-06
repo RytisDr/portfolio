@@ -86,6 +86,7 @@ if (window.location.pathname.includes("works")) {
                 if (page >= worksPages) {
                     worksSection.style.marginBottom = "130px"
                     plusButton.classList.add("dontDisplay");
+       /*             plusButton.classList.remove("visible");*/
                 }
 
                 return e.json()
@@ -94,20 +95,11 @@ if (window.location.pathname.includes("works")) {
             .then(showWorks)
     }
 
-
-    /*plusButton.addEventListener('click', function () {
-        if (page < worksPages) {
-            page++;
-            fetchWorks();
-        } else if (page >= worksPages) {
-            plusButton.classList.add("dontDisplay");
-        }
-    })
-*/
     function showWorks(data) {
         data.forEach(showSingleWork);
         if (page < worksPages) {
             plusButton.classList.remove("dontDisplay");
+           /*  plusButton.classList.add("visible");*/
             worksSection.style.marginBottom = "25px";
             plusButton.addEventListener('click', function () {
                 page++;
