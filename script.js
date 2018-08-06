@@ -81,12 +81,10 @@ if (window.location.pathname.includes("works")) {
         fetch(endpoint)
             .then(e => {
                 loaderAnimation.classList.toggle("dontDisplay");
-                document.querySelector(".worksContent").classList.toggle("invisible");
+                worksSection.classList.toggle("invisible");
                 worksPages = e.headers.get("X-WP-TotalPages")
                 if (page >= worksPages) {
-                    worksSection.style.marginBottom = "130px"
                     plusButton.classList.add("dontDisplay");
-       /*             plusButton.classList.remove("visible");*/
                 }
 
                 return e.json()
@@ -97,15 +95,6 @@ if (window.location.pathname.includes("works")) {
 
     function showWorks(data) {
         data.forEach(showSingleWork);
-        if (page < worksPages) {
-            plusButton.classList.remove("dontDisplay");
-           /*  plusButton.classList.add("visible");*/
-            worksSection.style.marginBottom = "25px";
-            plusButton.addEventListener('click', function () {
-                page++;
-                fetchAgain();
-            })
-        }
     }
 
 
@@ -215,7 +204,16 @@ if (window.location.pathname.includes("works")) {
 
     function fetchAgain() {
         fetchWorks();
-        document.querySelector(".worksContent").classList.toggle("invisible");
+        worksSection.classList.toggle("invisible");
+        worksSection.addEventListener("transitionend", function(){
+             if (page < worksPages) {
+            plusButton.classList.remove("dontDisplay");
+            plusButton.addEventListener('click', function () {
+                page++;
+                fetchAgain();
+            })
+        }
+        })
         loaderAnimation.classList.toggle("dontDisplay");
     }
 

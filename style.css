@@ -369,21 +369,17 @@ html {
 
 
 }
-.plusButton{
+
+.plusButton {
     transform: rotate(180deg);
+    margin-top: -70px;
 }
 
 .plusButton h2 {
     transform: rotate(-180deg);
     padding-bottom: 30px;
 }
-/*.plusButton{
-    transition: all 4s;
-    opacity: 0;
-}
-.plusButton.visible{
-    opacity: 1;
-}*/
+
 /*SINGLE PROJECT PAGE*/
 
 /*NAV ADJUSTMENTS*/
@@ -502,7 +498,8 @@ pre img {
     right: -55px;
 }
 
-.upArrow h2, .plusButton h2 {
+.upArrow h2,
+.plusButton h2 {
     font: 400 20pt 'Josefin Sans', sans-serif;
     text-align: center;
     line-height: 100px;
@@ -619,6 +616,9 @@ pre img {
     }
     .worksTriangle.inSubPage {
         background-color: #877E60;
+    }
+    .plusButton {
+        margin-top: 0px;
     }
 
     /*SINGLE PROJECT PAGE*/
