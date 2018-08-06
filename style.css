@@ -209,7 +209,7 @@ html {
 }
 
 .contactPage {
-    margin: 230px 0 150px;
+    margin: 20vh 0 150px;
     padding: 0 12vw;
 }
 
@@ -256,11 +256,6 @@ html {
     color: black;
     text-align: center;
 }
-
-
-
-
-
 
 .homeTriangle h2 {
     color: white;
