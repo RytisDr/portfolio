@@ -54,7 +54,7 @@ html {
 }
 
 .transitionAllLonger {
-    transition: all 0.8s;
+    transition: all 1s;
 }
 
 /*index text*/
