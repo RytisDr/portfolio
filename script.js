@@ -17,31 +17,31 @@ function refresh() {
 
 /*INDEX SCRIPT*/
 if (document.body.classList.contains("index")) {
-    let navContact = document.querySelector(".contactTriangle");
+    let navAbout = document.querySelector(".aboutTriangle");
     let navWorks = document.querySelector(".worksTriangle");
     navWorks.addEventListener('click', function () {
         /*DONT FORGET TO REMOVE .HTML WHEN UPLOADING*/
         window.location = 'works.html'
     })
 
-    navContact.addEventListener('click', GoToContact);
+    navAbout.addEventListener('click', GoToAbout);
 
-    function GoToContact() {
+    function GoToAbout() {
 
-        document.querySelector(".index").classList.toggle("inContactPage");
+        document.querySelector(".index").classList.toggle("inAboutPage");
         document.querySelector(".indexContent").classList.toggle("dontDisplay");
-        document.querySelector(".contactPage").classList.toggle("dontDisplay");
+        document.querySelector(".aboutPage").classList.toggle("dontDisplay");
         document.querySelector(".worksTriangle h2").classList.toggle("fontColorSwitch");
         if (mobile.matches) {
-            document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
-            document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
-            navContact.classList.toggle("homeTriangle");
+            document.querySelector(".aboutTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
+            document.querySelector(".aboutTriangle h2").classList.toggle("dontDisplay");
+            navAbout.classList.toggle("homeTriangle");
             inMobilePage = true;
         } else if (breakpoint.matches) {
-            document.querySelector(".contactTriangle").classList.toggle("inContact");
-            document.querySelector(".contactTriangle h2").classList.toggle("fontColorSwitch");
-            document.querySelector(".contactTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
-            document.querySelector(".contactTriangle h2").classList.toggle("dontDisplay");
+            document.querySelector(".aboutTriangle").classList.toggle("inAbout");
+            document.querySelector(".aboutTriangle h2").classList.toggle("fontColorSwitch");
+            document.querySelector(".aboutTriangle h2:nth-child(2)").classList.toggle("dontDisplay");
+            document.querySelector(".aboutTriangle h2").classList.toggle("dontDisplay");
             inDesktopPage = true;
         }
 

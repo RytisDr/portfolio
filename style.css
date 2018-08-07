@@ -65,7 +65,7 @@ html {
 }
 
 .index h1,
-.contactPage p,
+.aboutPage p,
 #currentOpt {
     font: 13pt 'Josefin Sans', sans-serif;
     text-align: center;
@@ -147,7 +147,7 @@ html {
 
 .worksTriangle,
 .filterTriangle,
-.contactTriangle,
+.aboutTriangle,
 .homeTriangle {
     cursor: pointer;
     border-left: 105px solid transparent;
@@ -162,7 +162,7 @@ html {
 }
 
 .worksTriangle h2,
-.contactTriangle h2,
+.aboutTriangle h2,
 .homeTriangle h2,
 .filterTriangle h2 {
     font: 700 16pt 'Josefin Sans', sans-serif;
@@ -174,11 +174,11 @@ html {
 }
 
 .worksTriangle h2.fontColorSwitch,
-.contactTriangle h2.fontColorSwitch {
+.aboutTriangle h2.fontColorSwitch {
     color: #0F4443;
 }
 
-.contactTriangle,
+.aboutTriangle,
 .homeTriangle {
     border-top: 105px solid #0F4443;
     transform: rotate(-45deg);
@@ -186,15 +186,15 @@ html {
     right: -105px;
 }
 
-.contactTriangle h2,
+.aboutTriangle h2,
 .homeTriangle h2 {
     left: inherit;
-    right: -50px;
+    right: -42px;
 }
 
-/*contact page */
+/*about page */
 
-.inContactPage {
+.inAboutPage {
     background-color: #0F4443;
 }
 
@@ -202,18 +202,18 @@ html {
     border-top: 105px solid #BEB6AE;
 }
 
-.contactTriangle h2:nth-child(2),
+.aboutTriangle h2:nth-child(2),
 .homeTriangle h2 {
     color: #0F4443;
     right: -35px;
 }
 
-.contactPage {
+.aboutPage {
     margin: 20vh 0 150px;
     padding: 0 12vw;
 }
 
-.contactPage p {
+.aboutPage p {
 
     color: white;
 }
@@ -522,7 +522,7 @@ pre img {
         left: 0;
         right: 0;
     }
-    .contactTriangle,
+    .aboutTriangle,
     .worksTriangle,
     .homeTriangle {
         position: absolute;
@@ -538,7 +538,7 @@ pre img {
         transform: none;
         border-radius: 125px;
     }
-    .contactTriangle,
+    .aboutTriangle,
     .homeTriangle {
         right: -450px;
     }
@@ -546,7 +546,7 @@ pre img {
         left: -450px;
         background-color: white;
     }
-    .contactTriangle h2,
+    .aboutTriangle h2,
     .worksTriangle h2,
     .homeTriangle h2 {
         left: 0;
@@ -558,14 +558,14 @@ pre img {
         text-align: center;
         font-size: 23pt;
     }
-    .contactTriangle h2:nth-child(2) {
+    .aboutTriangle h2:nth-child(2) {
         right: 0;
     }
-    .contactPage p {
+    .aboutPage p {
         width: 450px;
         margin: 20px auto;
     }
-    .inContact,
+    .inAbout,
     .homeTriangle {
         background-color: #BEB6AE;
     }
@@ -655,7 +655,7 @@ pre img {
         margin: auto;
         width: 70%;
     }
-    .contactTriangle,
+    .aboutTriangle,
     .homeTriangle {
         right: -550px;
     }
@@ -686,12 +686,12 @@ pre img {
     #me {
         max-width: 300px;
     }
-    .contactPage p {
+    .aboutPage p {
         font-size: 20pt;
         line-height: 30px;
         margin: 30px auto;
     }
-    .contactPage p:nth-child(1) {
+    .aboutPage p:nth-child(1) {
         margin-top: 310px;
     }
     #desktopFilterSec {
@@ -736,7 +736,7 @@ pre img {
 /*BREAKPOINT 4*/
 
 @media only screen and (min-width: 1400px) {
-    .contactTriangle,
+    .aboutTriangle,
     .worksTriangle,
     .homeTriangle {
         top: 60px;
@@ -747,7 +747,7 @@ pre img {
     #desktopFilterSec {
         width: 1100px;
     }
-    .contactTriangle,
+    .aboutTriangle,
     .homeTriangle {
         right: -900px;
     }
