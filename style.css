@@ -138,9 +138,9 @@ html {
     }
 }
 
-/*mobile navigation*/
+/* navigation*/
 
-.mobileNav {
+.Nav {
     position: fixed;
     bottom: 0;
 }
@@ -515,7 +515,7 @@ pre img {
     #me {
         width: 35vw;
     }
-    .mobileNav {
+    .Nav {
         position: absolute;
         bottom: inherit;
         top: 0;
@@ -636,6 +636,7 @@ pre img {
     #singleProject h1 {
         font-size: 25pt;
         margin: 40px auto;
+        width: 100%;
     }
     #singleProject h2 {
         font-size: 18pt;
