@@ -257,6 +257,12 @@ html {
     text-align: center;
 }
 
+#singleProject h1,
+#singleProject h2,
+#singleProject a{
+    width: auto;
+}
+
 .homeTriangle h2 {
     color: white;
 }
@@ -406,7 +412,6 @@ html {
     font-weight: 700;
     font-size: 18pt;
     margin: 25px auto;
-    width: 100vw;
     max-width: 100%;
 }
 
@@ -636,7 +641,6 @@ pre img {
     #singleProject h1 {
         font-size: 25pt;
         margin: 40px auto;
-        width: 100%;
     }
     #singleProject h2 {
         font-size: 18pt;
