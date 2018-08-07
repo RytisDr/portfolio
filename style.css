@@ -451,7 +451,6 @@ html {
 }
 
 #subpageText p {
-    padding: 0 20px;
     text-indent: 20pt;
 }
 
@@ -464,6 +463,7 @@ pre img {
 }
 
 #subpageText {
+    padding: 0 20px;
     margin-bottom: 145px;
 }
 
