@@ -92,17 +92,17 @@ html {
 
 .leftEye,
 .rightEye {
-    animation: blink 5s infinite;
+    animation: blink 4.5s infinite;
     transform-origin: 0px 59px 0px;
 }
 
 @keyframes blink {
-    0.1%,
-    2% {
+    1%,
+    4% {
         transform: scale(1, 1);
     }
-    0.6%,
-    1% {
+    1.5%,
+    2% {
         transform: scale(1, 0.07);
     }
 }
