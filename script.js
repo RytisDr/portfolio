@@ -13,7 +13,7 @@ function refresh() {
         location.reload()
     }
 }
- window.addEventListener('resize', refresh)
+window.addEventListener('resize', refresh)
 
 /*INDEX SCRIPT*/
 if (document.body.classList.contains("index")) {
@@ -26,9 +26,9 @@ if (document.body.classList.contains("index")) {
     navAbout.addEventListener('click', GoToAbout);
 
     function GoToAbout() {
-        document.querySelector("#CV").addEventListener("click", function(){
-                                                       window.open('/pdf/Rytis-Drazdauskas_CV-O.pdf');
-                                                       })
+        document.querySelector("#CV").addEventListener("click", function () {
+            window.open('/pdf/Rytis-Drazdauskas_CV-O.pdf');
+        })
         document.querySelector(".index").classList.toggle("inAboutPage");
         document.querySelector(".indexContent").classList.toggle("dontDisplay");
         document.querySelector(".aboutPage").classList.toggle("dontDisplay");
@@ -206,14 +206,14 @@ if (window.location.pathname.includes("works")) {
     function fetchAgain() {
         fetchWorks();
         worksSection.classList.toggle("invisible");
-        worksSection.addEventListener("transitionend", function(){
-             if (page < worksPages) {
-            plusButton.classList.remove("dontDisplay");
-            plusButton.addEventListener('click', function () {
-                page++;
-                fetchAgain();
-            })
-        }
+        worksSection.addEventListener("transitionend", function () {
+            if (page < worksPages) {
+                plusButton.classList.remove("dontDisplay");
+                plusButton.addEventListener('click', function () {
+                    page++;
+                    fetchAgain();
+                })
+            }
         })
         loaderAnimation.classList.toggle("dontDisplay");
     }
