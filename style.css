@@ -217,7 +217,11 @@ html {
 
     color: white;
 }
-
+#CV{
+    text-decoration: underline;
+    cursor: pointer;
+    margin: auto;
+}
 /*works page*/
 
 .desktopFilter {

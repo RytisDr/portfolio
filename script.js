@@ -23,11 +23,12 @@ if (document.body.classList.contains("index")) {
         /*DONT FORGET TO REMOVE .HTML WHEN UPLOADING*/
         window.location = 'works.html'
     })
-
     navAbout.addEventListener('click', GoToAbout);
 
     function GoToAbout() {
-
+        document.querySelector("#CV").addEventListener("click", function(){
+                                                       window.open('/pdf/Rytis-Drazdauskas_CV-O.pdf');
+                                                       })
         document.querySelector(".index").classList.toggle("inAboutPage");
         document.querySelector(".indexContent").classList.toggle("dontDisplay");
         document.querySelector(".aboutPage").classList.toggle("dontDisplay");
@@ -254,7 +255,7 @@ if (window.location.pathname.includes("project")) {
         downloadingImage.src = clone.querySelector("#subpageImg").src;
         if (aProject.acf.link) {
             function goToProject() {
-                window.open(aProject.acf.link, '_blank')
+                window.open(aProject.acf.link)
             }
             clone.querySelector("#visitLink").classList.toggle("dontDisplay")
             clone.querySelector("#visitLink").addEventListener('click', goToProject)
