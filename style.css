@@ -222,6 +222,7 @@ html {
 }
 .aboutPage p {
   font-weight: 300;
+  line-height: 20px;
   text-align: left;
   text-justify: auto;
 }
@@ -627,7 +628,7 @@ pre img {
   .aboutPage p {
     font-size: 16pt;
     width: 450px;
-    line-height: 23px;
+    line-height: 25px;
     margin: 170px auto 40px;
   }
   .aboutPage h1 {
@@ -795,13 +796,21 @@ pre img {
   #me {
     max-width: 300px;
   }
+
   .aboutPage p {
-    font-size: 20pt;
-    line-height: 30px;
-    margin: 30px auto;
+    font-size: 15pt;
+    line-height: 25px;
+    margin-top: 150px;
   }
-  .aboutPage p:nth-child(1) {
-    margin-top: 310px;
+  #skills {
+    width: 700px;
+    grid-column-gap: 70px;
+  }
+  #coding::before {
+    height: 320px;
+  }
+  #contacts {
+    margin-top: 150px;
   }
   #desktopFilterSec {
     width: 90%;
