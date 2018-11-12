@@ -226,7 +226,7 @@ html {
   text-justify: auto;
 }
 .aboutPage h1 {
-  font-size: 15pt;
+  font-size: 16pt;
   margin-top: 30px;
 }
 .aboutPage h2 {
@@ -249,7 +249,7 @@ html {
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 60vw;
-  margin: 40px auto 80px auto;
+  margin: 60px auto 80px auto;
 }
 #contacts img,
 #contacts a {
@@ -592,7 +592,7 @@ pre img {
     margin-right: auto;
     left: 0;
     right: 0;
-    top: 50px;
+    top: 40px;
     width: 160px;
     height: 80px;
     border: none;
@@ -623,14 +623,36 @@ pre img {
   .aboutTriangle h2:nth-child(2) {
     right: 0;
   }
+  /* ABOUT "SUB-PAGE" */
   .aboutPage p {
+    font-size: 16pt;
     width: 450px;
-
-    margin: 20px auto;
+    line-height: 23px;
+    margin: 170px auto 40px;
+  }
+  .aboutPage h1 {
+    margin-top: 50px;
   }
   .inAbout,
   .homeTriangle {
     background-color: #beb6ae;
+  }
+  #coding:after,
+  #coding:before {
+    bottom: -25px;
+    width: 400px;
+    height: 2px;
+  }
+  #coding:before {
+    top: -25px;
+  }
+  #skills,
+  #contacts {
+    width: 450px;
+    margin: auto;
+  }
+  #contacts {
+    margin: 70px auto 0px auto;
   }
   .filterTriangle {
     display: none;
