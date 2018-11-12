@@ -2,3 +2,5 @@
 /node_modules/
 img/
 .htaccess
+.cache/
+dist/

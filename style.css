@@ -812,6 +812,13 @@ pre img {
   #contacts {
     margin-top: 150px;
   }
+  #contacts img,
+  #contacts a {
+    margin: auto;
+    width: 64px;
+    cursor: pointer;
+  }
+
   #desktopFilterSec {
     width: 90%;
   }
