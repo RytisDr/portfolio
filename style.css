@@ -222,9 +222,12 @@ html {
 }
 .aboutPage p {
   font-weight: 300;
+  text-align: left;
+  text-justify: auto;
 }
 .aboutPage h1 {
   font-size: 15pt;
+  margin-top: 30px;
 }
 .aboutPage h2 {
   font-size: 14pt;
@@ -248,7 +251,8 @@ html {
   width: 60vw;
   margin: 40px auto 80px auto;
 }
-#contacts img {
+#contacts img,
+#contacts a {
   margin: auto;
   width: 50px;
   cursor: pointer;
@@ -256,7 +260,25 @@ html {
 #contacts h1 {
   margin: auto;
 }
-
+#coding {
+  position: relative;
+}
+#coding:after,
+#coding:before {
+  content: " ";
+  position: absolute;
+  bottom: -10px;
+  width: 70vw;
+  height: 1px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: white;
+}
+#coding:before {
+  top: -15px;
+}
 /*works page*/
 
 .desktopFilter {
