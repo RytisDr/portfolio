@@ -739,6 +739,34 @@ pre img {
     margin: auto;
     width: 70%;
   }
+  /* about sub-page */
+  .aboutPage h1 {
+    margin: 20px auto 50px;
+    font-size: 18pt;
+  }
+  #skills {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 50px;
+    width: 600px;
+  }
+  #coding::after {
+    display: none;
+  }
+  #coding::before {
+    width: 2px;
+    height: 300px;
+    position: absolute;
+    top: auto;
+    bottom: auto;
+  }
+  #coding {
+    position: initial;
+  }
+  #contacts {
+    margin-top: 100px;
+  }
+  /* /////////// */
   .aboutTriangle,
   .homeTriangle {
     right: -550px;
@@ -746,9 +774,6 @@ pre img {
   .singleProjectNav .worksTriangle {
     left: -550px;
   }
-  /*    .singleProjectNav .homeTriangle{
-        right: -900px;
-    }*/
   #loaderSVG {
     top: 27vh;
   }
