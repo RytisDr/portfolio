@@ -263,11 +263,13 @@ html {
 }
 #coding {
   position: relative;
+  z-index: -1;
 }
 #coding:after,
 #coding:before {
   content: " ";
   position: absolute;
+  z-index: -1;
   bottom: -10px;
   width: 70vw;
   height: 1px;
