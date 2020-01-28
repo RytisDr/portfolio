@@ -358,22 +358,27 @@ html {
   transform: rotate(45deg);
   text-decoration: underline;
   cursor: pointer;
+  position: absolute;
 }
 
 .filterTriangle h2:nth-child(2) {
-  margin: -100px 190px;
+  top: -70px;
+  left: 240px;
 }
 
 .filterTriangle h2:nth-child(4) {
-  margin: -70px 120px;
+  top: -40px;
+  left: 185px;
 }
 
 .filterTriangle h2:nth-child(5) {
-  margin: -50px 70px;
+  top: -10px;
+  left: 140px;
 }
 
 .filterTriangle h2:nth-child(6) {
-  margin: -25px 35px;
+  top: 20px;
+  left: 105px;
 }
 
 .filterTriangle h2.active {
@@ -387,9 +392,9 @@ html {
   cursor: pointer;
   width: 60px;
   height: 60px;
-  left: -150px;
+  left: -50px;
   z-index: 5;
-  bottom: 50px;
+  bottom: -80px;
   transform: rotate(45deg);
 }
 
